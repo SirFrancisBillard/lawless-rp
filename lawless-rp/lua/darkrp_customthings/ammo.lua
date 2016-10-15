@@ -65,3 +65,38 @@ DarkRP.createAmmoType("smg1", {
 
 Add new ammo types under the next line!
 ---------------------------------------------------------------------------]]
+
+DarkRP.createAmmoType("pistol", {
+	name = "Pistol Ammo",
+	model = "models/Items/BoxSRounds.mdl",
+	price = 30,
+	amountGiven = 24
+})
+
+DarkRP.createAmmoType("buckshot", {
+	name = "Shotgun Ammo",
+	model = "models/Items/BoxBuckshot.mdl",
+	price = 50,
+	amountGiven = 8
+})
+
+DarkRP.createAmmoType("ar2", {
+	name = "Rifle Ammo",
+	model = "models/Items/BoxMRounds.mdl",
+	price = 80,
+	amountGiven = 30
+})
+
+DarkRP.createAmmoType("sniperpenetratedround", {
+	name = "Sniper Ammo",
+	model = "models/items/sniper_round_box.mdl",
+	price = 100,
+	amountGiven = 30
+})
+
+DarkRP.createAmmoType("nmrih_flare", {
+	name = "Flares",
+	model = "models/props_c17/TrapPropeller_Lever.mdl",
+	price = 100,
+	amountGiven = 30
+})
