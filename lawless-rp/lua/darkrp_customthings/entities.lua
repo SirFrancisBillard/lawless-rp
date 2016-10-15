@@ -23,6 +23,7 @@ DarkRP.createEntity("Money Printer", {
 	price = 1000,
 	max = 4,
 	cmd = "buymoneyprinter",
+	category = "Contraband"
 })
 
 DarkRP.createEntity("Pot", {
@@ -31,6 +32,7 @@ DarkRP.createEntity("Pot", {
 	price = 600,
 	max = 4,
 	cmd = "buypot",
+	category = "Contraband"
 })
 
 DarkRP.createEntity("Seed", {
@@ -39,5 +41,6 @@ DarkRP.createEntity("Seed", {
 	price = 200,
 	max = 2,
 	cmd = "buyseed",
+	category = "Contraband"
 })
 
