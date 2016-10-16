@@ -1,0 +1,5 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" 	"models\weapons\tfa_nmrih\fa_m16a4\v_fa_m16a4_lens_edges"
+	"$translucent" 1
+}

@@ -1,0 +1,28 @@
+"VertexLitGeneric"
+{
+	"$basetexture" 	"models\weapons\tfa_nmrih\fa_calicom950\calico_d"
+	"$bumpmap" 	"models\weapons\tfa_nmrih\fa_calicom950\calico_n"
+	"$phongexponenttexture" 	"models\weapons\tfa_nmrih\fa_calicom950\calico_g"
+
+	"$selfillum" "1"
+	"$selfillummask"  "models\weapons\tfa_nmrih\fa_calicom950\calico_e"
+
+	"$envmap" "env_cubemap"
+	"$envmapcontrast" "15"
+	"$envmaptint" "[ 0.004 0.004 0.004 ]"
+
+	"$halflambert" "1"
+
+	//"$phongalbedotint" "1"
+	"$phong"     "1"
+	"$phongboost"   "4"
+	"$phongalbedoboost" "30"
+	"$phongfresnelranges"   "[0.2 0.6 1.1]"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "50"	
+	"$rimlightboost" "0.31"
+	"$rimmask" "1"
+	$ambientocclusion 1
+
+}

@@ -1,0 +1,28 @@
+VertexLitGeneric
+{
+$halflambert "1"
+$selfillum "1"
+$phong "1"
+$phongtint "[.12 .15 .1]"
+$phongboost "5"
+$phongexponent "100"
+$phongfresnelranges "[1 10 8]"
+
+$envmap "env_cubemap"
+$envmaptint "[.12 .15 .1]"
+$normalmapalphaenvmapmask "1"
+
+//$rimlight "1"
+//$rimlightexponent "12"
+//$rimlightboost "1"
+
+$basetexture "models\weapons\tfa_nmrih\fa_1911\v_fa_1911_d"
+$bumpmap "models\weapons\tfa_nmrih\fa_1911\v_fa_1911_n"
+
+$selfillum 1
+
+$selfillummask "models\weapons\tfa_nmrih\fa_1911\v_fa_1911_illum"
+
+$surfaceprop "weapon"
+	"keywords" "1911"
+}

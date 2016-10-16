@@ -1,0 +1,17 @@
+VertexLitGeneric
+{
+	$basetexture                      "models\weapons\tfa_nmrih\fa_sw686\v_fa_sw686_d"
+	$bumpmap                         "models\weapons\tfa_nmrih\fa_sw686\v_fa_sw686_n"
+	$phongexponenttexture  "models\weapons\tfa_nmrih\fa_sw686\v_fa_sw686_g"
+	
+	$phong 1
+	$phongboost "72"
+	$phongfresnelranges "[0.25 0.75 1.00]"
+	$phongalbedotint 1
+	$envmap env_cubemap
+	$normalmapalphaenvmapmask 1
+	$envmapfresnel 1
+	$envmaptint "[0.075 0.075 0.1]"
+	$envmapfresnel "1"
+	$selfillum "1"
+}

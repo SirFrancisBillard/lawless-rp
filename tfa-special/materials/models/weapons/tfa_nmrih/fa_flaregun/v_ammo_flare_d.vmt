@@ -1,0 +1,7 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models\weapons\tfa_nmrih\fa_flaregun\v_ammo_flare_d"
+
+	"$surfaceprop" "weapon"
+	"keywords" "flaregun flare gun"
+}

@@ -1,0 +1,6 @@
+"UnlitGeneric"
+{
+	"$baseTexture" "_rt_Scope"
+	$model		1
+	$translucent	1
+}

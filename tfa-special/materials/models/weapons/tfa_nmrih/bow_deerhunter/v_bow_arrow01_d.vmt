@@ -1,0 +1,7 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/weapons/tfa_nmrih/bow_deerhunter/v_bow_arrow01_d"
+	"$normalmapalphaenvmapmask" 1 
+	"$model" 1
+	"$surfaceprop" "weapon"
+}
