@@ -18,7 +18,7 @@ if SERVER then
 	end
 
 	function ENT:Use(activator, caller)
-		if IsValid(caller) and caller:IsPlayer() and not ply.Sleeping then
+		if IsValid(caller) and caller:IsPlayer() then
 			DarkRP.toggleSleep(caller, "force")
 			SafeRemoveEntity(self)
 		end

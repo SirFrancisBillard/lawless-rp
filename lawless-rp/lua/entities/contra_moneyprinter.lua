@@ -27,7 +27,7 @@ if SERVER then
 		self.sparking = false
 		self.damage = 100
 		self.IsMoneyPrinter = true
-		timer.Simple(math.random(100, 350), function() PrintMore(self) end)
+		timer.Simple(math.random(50, 175), function() PrintMore(self) end)
 
 		self.sound = CreateSound(self, Sound("ambient/levels/labs/equipment_printer_loop1.wav"))
 		self.sound:SetSoundLevel(52)

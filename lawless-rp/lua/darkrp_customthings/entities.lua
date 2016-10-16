@@ -22,25 +22,25 @@ Add entities under the following line:
 DarkRP.createEntity("Money Printer", {
 	ent = "contra_moneyprinter",
 	model = "models/props_c17/consolebox01a.mdl",
-	price = 1000,
-	max = 4,
+	price = 540,
+	max = 10,
 	cmd = "buymoneyprinter",
 	category = "Contraband"
 })
 
-DarkRP.createEntity("Pot", {
+DarkRP.createEntity("Plant Pot", {
 	ent = "contra_weedplant",
 	model = "models/props_junk/terracotta01.mdl",
-	price = 600,
-	max = 4,
-	cmd = "buypot",
+	price = 260,
+	max = 10,
+	cmd = "buyplantpot",
 	category = "Contraband"
 })
 
 DarkRP.createEntity("Seeds", {
 	ent = "contra_seed",
 	model = "models/props_junk/garbage_bag001a.mdl",
-	price = 200,
+	price = 20,
 	max = 2,
 	cmd = "buyseed",
 	category = "Contraband"
@@ -59,7 +59,7 @@ DarkRP.createEntity("Health Kit", {
 })
 
 DarkRP.createEntity("Health Vial", {
-	ent = "pharm_healthkit",
+	ent = "pharm_healthvial",
 	model = "models/healthvial.mdl",
 	price = 80,
 	max = 2,
@@ -87,6 +87,48 @@ DarkRP.createEntity("Nitrazepam", {
 	allowed = {TEAM_DOCTOR},
 	category = "Pharmaceutical"
 })
+
+-- Meth Cooking
+
+if false then
+
+DarkRP.createEntity("Pot", {
+	ent = "meth_pot",
+	model = "models/props_c17/metalPot001a.mdl",
+	price = 20,
+	max = 2,
+	cmd = "buypot",
+	category = "Meth Cooking"
+})
+
+DarkRP.createEntity("Red Phosphorus", {
+	ent = "meth_redphos",
+	model = "mmodels/props_lab/box01a.mdl",
+	price = 30,
+	max = 2,
+	cmd = "buyredphosphorus",
+	category = "Meth Cooking"
+})
+
+DarkRP.createEntity("Ephedrine", {
+	ent = "meth_ephedrine",
+	model = "models/props_lab/jar01b.mdl",
+	price = 15,
+	max = 2,
+	cmd = "buyephedrine",
+	category = "Meth Cooking"
+})
+
+DarkRP.createEntity("Water", {
+	ent = "meth_water",
+	model = "models/props_junk/garbage_plasticbottle003a.mdl",
+	price = 5,
+	max = 2,
+	cmd = "buywater",
+	category = "Meth Cooking"
+})
+
+end
 
 -- Black Market
 
