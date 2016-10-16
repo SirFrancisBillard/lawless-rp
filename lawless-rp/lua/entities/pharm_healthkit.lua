@@ -19,7 +19,7 @@ if SERVER then
 	end
 
 	function ENT:Use(activator, caller)
-		if IsValid(caller) and caller:IsPlayer() and not ply.Sleeping then
+		if IsValid(caller) and caller:IsPlayer() then
 			if caller:Health() >= caller:GetMaxHealth() then
 				caller:ChatPrint("You already have " .. caller:Health() .. " health!")
 			else

@@ -2,14 +2,14 @@ AddCSLuaFile()
 
 ENT.Type = "anim"
 ENT.Base = "base_gmodentity"
-ENT.PrintName = "Health Vial"
+ENT.PrintName = "Kevlar"
 ENT.Author = "Sir Francis Billard"
 ENT.Category = "Lawless RP"
 ENT.Spawnable = true
 
 if SERVER then
 	function ENT:Initialize()
-		self:SetModel("models/healthvial.mdl")
+		self:SetModel("models/Items/HealthKit.mdl")
 		self:PhysicsInit(SOLID_VPHYSICS)
 		self:SetMoveType(MOVETYPE_VPHYSICS)
 		self:SetSolid(SOLID_VPHYSICS)
@@ -20,11 +20,11 @@ if SERVER then
 
 	function ENT:Use(activator, caller)
 		if IsValid(caller) and caller:IsPlayer() then
-			if caller:Health() >= caller:GetMaxHealth() then
-				caller:ChatPrint("You already have " .. caller:Health() .. " health!")
+			if caller:Armor() >= 100 then
+				caller:ChatPrint("You are already wearing kevlar!")
 			else
-				self:EmitSound(Sound("items/medshot4.wav"))
-				caller:SetHealth(math.min(caller:Health() + 20, caller:GetMaxHealth()))
+				self:EmitSound(Sound("items/ammopickup.wav"))
+				caller:SetArmor(100)
 				SafeRemoveEntity(self)
 			end
 		end

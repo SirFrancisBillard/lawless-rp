@@ -49,7 +49,7 @@ TEAM_CITIZEN = DarkRP.createJob("Citizen", {
 })
 
 TEAM_LOCKSMITH = DarkRP.createJob("Locksmith", {
-	color = Color(75, 75, 75, 255),
+	color = Color(188, 244, 66, 255),
 	model = {
 		"models/player/Group03/Female_01.mdl",
 		"models/player/Group03/Female_02.mdl",
@@ -79,7 +79,7 @@ TEAM_LOCKSMITH = DarkRP.createJob("Locksmith", {
 })
 
 TEAM_HACKER = DarkRP.createJob("Hacker", {
-	color = Color(75, 75, 75, 255),
+	color = Color(212, 66, 244, 255),
 	model = "models/player/magnusson.mdl",
 	description = [[Hackers can use their knowledge and hacking ability to commit crimes or help the government.]],
 	weapons = {},
@@ -115,7 +115,7 @@ TEAM_GUN = DarkRP.createJob("Gun Dealer", {
 		Make sure you aren't caught selling illegal firearms to the public! You might get arrested!]],
 	weapons = {},
 	command = "gundealer",
-	max = 2,
+	max = 4,
 	salary = GAMEMODE.Config.normalsalary * (1 / 3),
 	admin = 0,
 	vote = false,
@@ -130,7 +130,7 @@ TEAM_BLACKMARKET = DarkRP.createJob("Black Market Dealer", {
 		Make sure you don't get caught!]],
 	weapons = {},
 	command = "blackmarket",
-	max = 2,
+	max = 4,
 	salary = GAMEMODE.Config.normalsalary * (1 / 3),
 	admin = 0,
 	vote = false,
