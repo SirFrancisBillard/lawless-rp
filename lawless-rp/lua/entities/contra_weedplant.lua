@@ -45,7 +45,10 @@ if SERVER then
 		if IsValid(ent) and ent.IsWeedSeed and not self:GetSeeded() then
 			self:SetSeeded(true)
 			SafeRemoveEntity(ent)
-			timer.Simple(math.random(100, 350), function() self:Grow() end)
+			timer.Simple(math.random(100, 350), function()
+				if not IsValid(self) then return end
+				self:Grow()
+			end)
 		end
 	end
 

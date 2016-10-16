@@ -35,9 +35,9 @@ DarkRP.createEntity("Pot", {
 	category = "Contraband"
 })
 
-DarkRP.createEntity("Seed", {
+DarkRP.createEntity("Seeds", {
 	ent = "contra_seed",
-	model = "models/weapons/w_bugbait.mdl",
+	model = "models/props_junk/garbage_bag001a.mdl",
 	price = 200,
 	max = 2,
 	cmd = "buyseed",

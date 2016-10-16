@@ -66,9 +66,39 @@ TEAM_LOCKSMITH = DarkRP.createJob("Locksmith", {
 		"models/player/Group03/Male_08.mdl",
 		"models/player/Group03/Male_09.mdl"
 	},
-	description = [[The Locksmith can use his knowledge and lockpicking ability to commit crimes or help the government.]],
+	description = [[Locksmiths can use their knowledge and lockpicking ability to commit crimes or help the government.]],
 	weapons = {},
-	command = "citizen",
+	command = "locksmith",
+	max = 4,
+	salary = GAMEMODE.Config.normalsalary,
+	admin = 0,
+	vote = false,
+	hasLicense = false,
+	candemote = false,
+	category = "Citizens",
+})
+
+TEAM_HACKER = DarkRP.createJob("Locksmith", {
+	color = Color(75, 75, 75, 255),
+	model = {
+		"models/player/Group03/Female_01.mdl",
+		"models/player/Group03/Female_02.mdl",
+		"models/player/Group03/Female_03.mdl",
+		"models/player/Group03/Female_04.mdl",
+		"models/player/Group03/Female_06.mdl",
+		"models/player/group03/male_01.mdl",
+		"models/player/Group03/Male_02.mdl",
+		"models/player/Group03/male_03.mdl",
+		"models/player/Group03/Male_04.mdl",
+		"models/player/Group03/Male_05.mdl",
+		"models/player/Group03/Male_06.mdl",
+		"models/player/Group03/Male_07.mdl",
+		"models/player/Group03/Male_08.mdl",
+		"models/player/Group03/Male_09.mdl"
+	},
+	description = [[Hackers can use their knowledge and hacking ability to commit crimes or help the government.]],
+	weapons = {},
+	command = "hacker",
 	max = 4,
 	salary = GAMEMODE.Config.normalsalary,
 	admin = 0,
@@ -82,14 +112,15 @@ TEAM_POLICE = DarkRP.createJob("Police Officer", {
 	color = Color(25, 25, 170, 255),
 	model = {"models/player/police.mdl", "models/player/police_fem.mdl"},
 	description = [[The protector of every citizen that lives in the city.
+		You are equipped with standard issue government weaponry.
 		You have the power to arrest criminals and protect innocents.
 		Hit a player with your arrest baton to put them in jail.
 		Bash a player with a stunstick and they may learn to obey the law.
 		The Battering Ram can break down the door of a criminal, with a warrant for their arrest.
 		The Battering Ram can also unfreeze frozen props (if enabled).
 		Type /wanted <name> to alert the public to the presence of a criminal.]],
-	weapons = {"arrest_stick", "unarrest_stick", "weapon_glock2", "stunstick", "door_ram", "weaponchecker"},
-	command = "cp",
+	weapons = {"arrest_stick", "unarrest_stick", "tfa_nmrih_m16_ch", "tfa_nmrih_m92fs", "stunstick", "door_ram", "weaponchecker"},
+	command = "police",
 	max = 12,
 	salary = GAMEMODE.Config.normalsalary * 1.45,
 	admin = 1,
