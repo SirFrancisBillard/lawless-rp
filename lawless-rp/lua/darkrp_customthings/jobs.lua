@@ -93,6 +93,21 @@ TEAM_HACKER = DarkRP.createJob("Hacker", {
 	category = "Citizens",
 })
 
+TEAM_DOCTOR = DarkRP.createJob("Doctor", {
+	color = Color(47, 79, 79, 255),
+	model = "models/player/kleiner.mdl",
+	description = [[Doctors can use their knowledge and healing ability to aid criminals or government.]],
+	weapons = {},
+	command = "doctor",
+	max = 4,
+	salary = GAMEMODE.Config.normalsalary,
+	admin = 0,
+	vote = false,
+	hasLicense = false,
+	candemote = false,
+	category = "Citizens",
+})
+
 TEAM_GUN = DarkRP.createJob("Gun Dealer", {
 	color = Color(255, 140, 0, 255),
 	model = "models/player/monk.mdl",
@@ -109,7 +124,7 @@ TEAM_GUN = DarkRP.createJob("Gun Dealer", {
 })
 
 TEAM_BLACKMARKET = DarkRP.createJob("Black Market Dealer", {
-	color = Color(0, 140, 255, 255),
+	color = Color(0, 200, 255, 255),
 	model = "models/player/eli.mdl",
 	description = [[Black Market dealers sell highly illegal items to the general public.
 		Make sure you don't get caught!]],

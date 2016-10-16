@@ -77,6 +77,18 @@ DarkRP.createShipment("Smith & Wesson", {
 
 -- Rifles
 
+DarkRP.createShipment("Winchester", {
+	model = "models/weapons/tfa_nmrih/w_fa_win1892.mdl",
+	entity = "tfa_nmrih_1892",
+	price = 8500,
+	amount = 1,
+	seperate = false,
+	pricesep = nil,
+	noship = false,
+	allowed = {TEAM_GUN},
+	category = "Rifles"
+})
+
 DarkRP.createShipment("Siminov", {
 	model = "models/weapons/tfa_nmrih/w_fa_sks.mdl",
 	entity = "tfa_nmrih_sks",
@@ -140,7 +152,7 @@ DarkRP.createShipment("Perennia", {
 })
 
 DarkRP.createShipment("Remington", {
-	model = "models/weapons/tfa_nmrih/v_fa_870.mdl",
+	model = "models/weapons/tfa_nmrih/w_fa_870.mdl",
 	entity = "tfa_nmrih_870",
 	price = 18500,
 	amount = 1,
@@ -242,7 +254,7 @@ DarkRP.createShipment("Chainsaw", {
 	price = 1337,
 	amount = 1,
 	seperate = true,
-	pricesep = 900,
+	pricesep = 1000,
 	noship = true,
 	category = "Melee"
 })

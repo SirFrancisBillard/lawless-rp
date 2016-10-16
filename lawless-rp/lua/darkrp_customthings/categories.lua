@@ -62,7 +62,7 @@ DarkRP.createCategory{
 }
 
 DarkRP.createCategory{
-	name = "Drugs",
+	name = "Pharmaceutical",
 	categorises = "entities",
 	startExpanded = true,
 	color = Color(0, 107, 0, 255),

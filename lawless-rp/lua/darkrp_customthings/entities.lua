@@ -17,6 +17,8 @@ http://wiki.darkrp.com/index.php/DarkRP:CustomEntityFields
 Add entities under the following line:
 ---------------------------------------------------------------------------]]
 
+-- Contraband
+
 DarkRP.createEntity("Money Printer", {
 	ent = "contra_moneyprinter",
 	model = "models/props_c17/consolebox01a.mdl",
@@ -44,3 +46,56 @@ DarkRP.createEntity("Seeds", {
 	category = "Contraband"
 })
 
+-- Pharmaceutical
+
+DarkRP.createEntity("Health Kit", {
+	ent = "pharm_healthkit",
+	model = "models/Items/HealthKit.mdl",
+	price = 160,
+	max = 2,
+	cmd = "buyhealthkit",
+	allowed = {TEAM_DOCTOR},
+	category = "Pharmaceutical"
+})
+
+DarkRP.createEntity("Health Vial", {
+	ent = "pharm_healthkit",
+	model = "models/healthvial.mdl",
+	price = 80,
+	max = 2,
+	cmd = "buyhealthvial",
+	allowed = {TEAM_DOCTOR},
+	category = "Pharmaceutical"
+})
+
+DarkRP.createEntity("Paracetamol", {
+	ent = "pharm_paracetamol",
+	model = "models/props_junk/garbage_metalcan002a.mdl",
+	price = 60,
+	max = 2,
+	cmd = "buyparacetamol",
+	allowed = {TEAM_DOCTOR},
+	category = "Pharmaceutical"
+})
+
+DarkRP.createEntity("Nitrazepam", {
+	ent = "pharm_nitrazepam",
+	model = "models/props_c17/TrapPropeller_Lever.mdl",
+	price = 40,
+	max = 2,
+	cmd = "buynitrazepam",
+	allowed = {TEAM_DOCTOR},
+	category = "Pharmaceutical"
+})
+
+-- Black Market
+
+DarkRP.createEntity("Kevlar", {
+	ent = "market_kevlar",
+	model = "models/props_c17/SuitCase_Passenger_Physics.mdl",
+	price = 2000,
+	max = 2,
+	cmd = "buykevlar",
+	allowed = {TEAM_BLACKMARKET},
+	category = "Black Market"
+})
