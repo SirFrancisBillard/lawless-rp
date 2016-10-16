@@ -279,7 +279,7 @@ GM.Config.falldamageamount              = 10
 -- printeroverheatchance - The likelyhood of a printer overheating. The higher this number, the less likely (minimum 3, default 22).
 GM.Config.printeroverheatchance         = 22
 -- printerreward - Reward for destroying a money printer.
-GM.Config.printerreward                 = 950
+GM.Config.printerreward                 = 35
 
 --[[---------------------------------------------------------------------------
 Other settings

@@ -16,7 +16,13 @@ local Hints = {
 	"Think the police are OP? Don't shoot people then!",
 	"Think guns should be cheaper? Don't do anything that requires a gun!",
 	"Don't like the mayor's laws? Assassinate him!",
-	"Bored? Start a war with the government!"
+	"Remember: Laws are IC and rules are OOC.",
+	"Need help? Type /help!",
+	"Need help? Type /help!",
+	"Need help? Type /help!",
+	"Need help? Type /help!",
+	"Need help? Type /help!",
+	"Need help? Type /help!"
 }
 
 timer.Create("ShowRoleplayHints", 120, 0, function()

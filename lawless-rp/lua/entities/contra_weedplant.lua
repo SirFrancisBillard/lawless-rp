@@ -36,7 +36,7 @@ if SERVER then
 		self:SetModel("models/props_junk/terracotta01.mdl")
 		self:SetGrown(false)
 		self:SetSeeded(false)
-		local amt = math.random(120, 300)
+		local amt = math.random(10, 50)
 		ply:addMoney(amt)
 		ply:ChatPrint("You have harvested $" .. string.Comma(amt) .. " worth of weed.")
 	end

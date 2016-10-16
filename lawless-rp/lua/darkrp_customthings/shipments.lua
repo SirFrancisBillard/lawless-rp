@@ -28,7 +28,6 @@ DarkRP.createShipment("Glock", {
 	seperate = false,
 	pricesep = nil,
 	noship = false,
-	allowed = {TEAM_GUN},
 	category = "Pistols"
 })
 
@@ -40,7 +39,6 @@ DarkRP.createShipment("Ruger", {
 	seperate = false,
 	pricesep = nil,
 	noship = false,
-	allowed = {TEAM_GUN},
 	category = "Pistols"
 })
 
@@ -52,7 +50,6 @@ DarkRP.createShipment("1911", {
 	seperate = false,
 	pricesep = nil,
 	noship = false,
-	allowed = {TEAM_GUN},
 	category = "Pistols"
 })
 
@@ -64,7 +61,6 @@ DarkRP.createShipment("Beretta", {
 	seperate = false,
 	pricesep = nil,
 	noship = false,
-	allowed = {TEAM_GUN},
 	category = "Pistols"
 })
 
@@ -76,7 +72,6 @@ DarkRP.createShipment("Smith & Wesson", {
 	seperate = false,
 	pricesep = nil,
 	noship = false,
-	allowed = {TEAM_GUN},
 	category = "Pistols"
 })
 
@@ -156,6 +151,32 @@ DarkRP.createShipment("Remington", {
 	category = "Shotguns"
 })
 
+-- Sniper Rifles
+
+DarkRP.createShipment("Sako", {
+	model = "models/weapons/tfa_nmrih/w_fa_sako85.mdl",
+	entity = "tfa_nmrih_sako",
+	price = 22500,
+	amount = 1,
+	seperate = false,
+	pricesep = nil,
+	noship = false,
+	allowed = {TEAM_GUN},
+	category = "Sniper Rifles"
+})
+
+DarkRP.createShipment("JAE", {
+	model = "models/weapons/tfa_nmrih/w_fa_jae700.mdl",
+	entity = "tfa_nmrih_jae700",
+	price = 28500,
+	amount = 1,
+	seperate = false,
+	pricesep = nil,
+	noship = false,
+	allowed = {TEAM_GUN},
+	category = "Sniper Rifles"
+})
+
 -- Other
 
 DarkRP.createShipment("Flare Gun", {
@@ -166,6 +187,88 @@ DarkRP.createShipment("Flare Gun", {
 	seperate = false,
 	pricesep = nil,
 	noship = false,
-	allowed = {TEAM_GUN},
 	category = "Other"
+})
+
+-- Melee
+
+DarkRP.createShipment("Baseball Bat", {
+	model = "models/weapons/tfa_nmrih/w_me_bat_metal.mdl",
+	entity = "tfa_nmrih_bat",
+	price = 1337,
+	amount = 1,
+	seperate = true,
+	pricesep = 600,
+	noship = true,
+	category = "Melee"
+})
+
+DarkRP.createShipment("Kitchen Knife", {
+	model = "models/weapons/tfa_nmrih/w_me_kitknife.mdl",
+	entity = "tfa_nmrih_kknife",
+	price = 1337,
+	amount = 1,
+	seperate = true,
+	pricesep = 700,
+	noship = true,
+	category = "Melee"
+})
+
+DarkRP.createShipment("Sledgehammer", {
+	model = "models/weapons/tfa_nmrih/w_me_sledge.mdl",
+	entity = "tfa_nmrih_sledge",
+	price = 1337,
+	amount = 1,
+	seperate = true,
+	pricesep = 800,
+	noship = true,
+	category = "Melee"
+})
+
+DarkRP.createShipment("Fire Axe", {
+	model = "models/weapons/tfa_nmrih/w_me_axe_fire.mdl",
+	entity = "tfa_nmrih_fireaxe",
+	price = 1337,
+	amount = 1,
+	seperate = true,
+	pricesep = 900,
+	noship = true,
+	category = "Melee"
+})
+
+DarkRP.createShipment("Chainsaw", {
+	model = "models/weapons/tfa_nmrih/w_me_chainsaw.mdl",
+	entity = "tfa_nmrih_chainsaw",
+	price = 1337,
+	amount = 1,
+	seperate = true,
+	pricesep = 900,
+	noship = true,
+	category = "Melee"
+})
+
+-- Black Market
+
+DarkRP.createShipment("TNT", {
+	model = "models/weapons/tfa_nmrih/w_exp_tnt.mdl",
+	entity = "tfa_nmrih_tnt",
+	price = 13500,
+	amount = 1,
+	seperate = false,
+	pricesep = nil,
+	noship = false,
+	allowed = {TEAM_BLACKMARKET},
+	category = "Black Market"
+})
+
+DarkRP.createShipment("Molotov Cocktail", {
+	model = "models/weapons/tfa_nmrih/w_exp_molotov.mdl",
+	entity = "tfa_nmrih_molotov",
+	price = 11500,
+	amount = 1,
+	seperate = false,
+	pricesep = nil,
+	noship = false,
+	allowed = {TEAM_BLACKMARKET},
+	category = "Black Market"
 })

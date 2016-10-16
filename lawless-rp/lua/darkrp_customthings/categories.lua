@@ -98,3 +98,32 @@ DarkRP.createCategory{
 	canSee = function(ply) return true end,
 	sortOrder = 100,
 }
+
+DarkRP.createCategory{
+	name = "Sniper Rifles",
+	categorises = "shipments",
+	startExpanded = true,
+	color = Color(0, 107, 0, 255),
+	canSee = function(ply) return true end,
+	sortOrder = 100,
+}
+
+DarkRP.createCategory{
+	name = "Black Market",
+	categorises = "shipments",
+	startExpanded = true,
+	color = Color(0, 107, 0, 255),
+	canSee = function(ply) return true end,
+	sortOrder = 100,
+}
+
+-- Weapons
+
+DarkRP.createCategory{
+	name = "Melee",
+	categorises = "weapons",
+	startExpanded = true,
+	color = Color(0, 107, 0, 255),
+	canSee = function(ply) return true end,
+	sortOrder = 100,
+}
