@@ -7,7 +7,7 @@ end
 function meta:GetInventory()
 	local inv = {}
 	for k, v in pairs(game.BuildAmmoTypes()) do
-		if self:HasItem(v.name) then
+		if self:HasItem(v.name) and g_ItemTable[v.name] != nil then
 			inv[v.name] = self:GetAmmoCount(v.name)
 		end
 	end
@@ -15,6 +15,5 @@ function meta:GetInventory()
 end
 
 function meta:UseItem(id)
-	if not self:HasItem(id) then return end
-	
+	self:ConCommand("_____use_item_" .. item.id)
 end

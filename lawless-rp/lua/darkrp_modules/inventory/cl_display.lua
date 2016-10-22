@@ -36,7 +36,7 @@ function OpenInventoryMenu()
 
 	local inv = ply:GetInventory()
 	for k, v in pairs(inv) do
-		invPanels[#invPanels + 1] = vgui.Create("DPanel", g_InvMenu)
+		invPanels[#invPanels + 1] = vgui.Create("DPanel", invPanelRight)
 		invPanels[#invPanels]:SetSize(0, 30)
 		invPanels[#invPanels]:Dock(TOP)
 		invModels[#invModels + 1] = vgui.Create("DModelPanel", invPanels[#invPanels])
@@ -44,12 +44,22 @@ function OpenInventoryMenu()
 		invModels[#invModels]:Dock(LEFT)
 		invModels[#invModels]:SetModel(g_ItemTable[k][model])
 		invButtons[#invButtons + 1] = vgui.Create("DButton", invPanels[#invPanels])
+		invButtons[#invButtons]:Dock(RIGHT)
+		invButtons[#invButtons]:SetText(g_ItemTable[k][name] .. " (" .. v .. ")")
+		invButtons[#invButtons].DoClick = function()
+			UseItem(g_ItemTable[k])
+			RefreshInventoryMenu()
+		end
 	end
-	RunConsoleCommand("_____use_item_" .. item.id)
 end
 
 function CloseInventoryMenu()
 	if IsValid(g_InvMenu) then
 		g_InvMenu:Remove()
 	end
+end
+
+function RefreshInventoryMenu()
+	CloseInventoryMenu()
+	OpenInventoryMenu()
 end
