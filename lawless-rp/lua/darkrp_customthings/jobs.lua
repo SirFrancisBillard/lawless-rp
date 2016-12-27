@@ -70,7 +70,7 @@ TEAM_LOCKSMITH = DarkRP.createJob("Locksmith", {
 	weapons = {},
 	command = "locksmith",
 	max = 4,
-	salary = GAMEMODE.Config.normalsalary * (1 / 3),
+	salary = GAMEMODE.Config.normalsalary / 3,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
@@ -85,7 +85,7 @@ TEAM_HACKER = DarkRP.createJob("Hacker", {
 	weapons = {},
 	command = "hacker",
 	max = 4,
-	salary = GAMEMODE.Config.normalsalary * (1 / 3),
+	salary = GAMEMODE.Config.normalsalary / 3,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
@@ -116,7 +116,7 @@ TEAM_GUN = DarkRP.createJob("Gun Dealer", {
 	weapons = {},
 	command = "gundealer",
 	max = 4,
-	salary = GAMEMODE.Config.normalsalary * (1 / 3),
+	salary = GAMEMODE.Config.normalsalary / 3,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
@@ -131,7 +131,7 @@ TEAM_BLACKMARKET = DarkRP.createJob("Black Market Dealer", {
 	weapons = {},
 	command = "blackmarket",
 	max = 4,
-	salary = GAMEMODE.Config.normalsalary * (1 / 3),
+	salary = GAMEMODE.Config.normalsalary / 3,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
@@ -188,7 +188,6 @@ TEAM_MAYOR = DarkRP.createJob("Mayor", {
 Define which team joining players spawn into and what team you change to if demoted
 ---------------------------------------------------------------------------]]
 GAMEMODE.DefaultTeam = TEAM_CITIZEN
-
 
 --[[---------------------------------------------------------------------------
 Define which teams belong to civil protection
