@@ -1,3 +1,4 @@
+--[[
 local ply = LocalPlayer()
 
 function GM:SpawnMenuEnabled()
@@ -63,3 +64,4 @@ function RefreshInventoryMenu()
 	CloseInventoryMenu()
 	OpenInventoryMenu()
 end
+]]
