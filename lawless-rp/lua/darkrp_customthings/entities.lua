@@ -17,6 +17,20 @@ http://wiki.darkrp.com/index.php/DarkRP:CustomEntityFields
 Add entities under the following line:
 ---------------------------------------------------------------------------]]
 
+-- Licenses
+
+DarkRP.createEntity("Pharmaceutical License", {
+	ent = "pharm_healthkit",
+	model = "models/Items/HealthKit.mdl",
+	price = 1200,
+	max = 1,
+	cmd = "buypharmaceuticallicense",
+	customCheck = function(ply) return not ply:GetNWBool("HasLicense_Pharm", false) end,
+	CustomCheckFailMsg = function(ply, entTable) return "You already have a pharmaceutical license!" end,
+        spawn = function(ply, tr, tblEnt) ply:SetNWBool("HasLicense_Pharm", true) return ents.Create("lawless_license") end,
+	category = "Licenses"
+})
+
 -- Contraband
 
 DarkRP.createEntity("Money Printer", {
@@ -54,7 +68,8 @@ DarkRP.createEntity("Health Kit", {
 	price = 160,
 	max = 2,
 	cmd = "buyhealthkit",
-	allowed = {TEAM_DOCTOR},
+	customCheck = function(ply) return ply:GetNWBool("HasLicense_Pharm", false) end,
+	CustomCheckFailMsg = function(ply, entTable) return "You require a pharmaceutical license to purchase this entity!" end,
 	category = "Pharmaceutical"
 })
 
@@ -64,7 +79,8 @@ DarkRP.createEntity("Health Vial", {
 	price = 80,
 	max = 2,
 	cmd = "buyhealthvial",
-	allowed = {TEAM_DOCTOR},
+	customCheck = function(ply) return ply:GetNWBool("HasLicense_Pharm", false) end,
+	CustomCheckFailMsg = function(ply, entTable) return "You require a pharmaceutical license to purchase this entity!" end,
 	category = "Pharmaceutical"
 })
 
@@ -74,7 +90,8 @@ DarkRP.createEntity("Paracetamol", {
 	price = 60,
 	max = 2,
 	cmd = "buyparacetamol",
-	allowed = {TEAM_DOCTOR},
+	customCheck = function(ply) return ply:GetNWBool("HasLicense_Pharm", false) end,
+	CustomCheckFailMsg = function(ply, entTable) return "You require a pharmaceutical license to purchase this entity!" end,
 	category = "Pharmaceutical"
 })
 
@@ -84,7 +101,8 @@ DarkRP.createEntity("Nitrazepam", {
 	price = 40,
 	max = 2,
 	cmd = "buynitrazepam",
-	allowed = {TEAM_DOCTOR},
+	customCheck = function(ply) return ply:GetNWBool("HasLicense_Pharm", false) end,
+	CustomCheckFailMsg = function(ply, entTable) return "You require a pharmaceutical license to purchase this entity!" end,
 	category = "Pharmaceutical"
 })
 
@@ -138,6 +156,7 @@ DarkRP.createEntity("Kevlar", {
 	price = 2000,
 	max = 2,
 	cmd = "buykevlar",
-	allowed = {TEAM_BLACKMARKET},
+	customCheck = function(ply) return ply:GetNWBool("HasLicense_BM", false) end,
+	CustomCheckFailMsg = function(ply, entTable) return "You require a black market license to purchase this entity!" end,
 	category = "Black Market"
 })
