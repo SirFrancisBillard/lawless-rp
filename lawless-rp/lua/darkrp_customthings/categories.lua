@@ -62,7 +62,7 @@ DarkRP.createCategory{
 }
 
 DarkRP.createCategory{
-	name = "Pharmaceutical",
+	name = "Drugs",
 	categorises = "entities",
 	startExpanded = true,
 	color = Color(0, 107, 0, 255),
@@ -71,7 +71,7 @@ DarkRP.createCategory{
 }
 
 DarkRP.createCategory{
-	name = "Meth Cooking",
+	name = "Ammunition",
 	categorises = "entities",
 	startExpanded = true,
 	color = Color(0, 107, 0, 255),
@@ -80,6 +80,24 @@ DarkRP.createCategory{
 }
 
 -- Shipments
+
+DarkRP.createCategory{
+	name = "Raiding Tools",
+	categorises = "shipments",
+	startExpanded = true,
+	color = Color(0, 107, 0, 255),
+	canSee = function(ply) return true end,
+	sortOrder = 10,
+}
+
+DarkRP.createCategory{
+	name = "Grenades",
+	categorises = "shipments",
+	startExpanded = true,
+	color = Color(0, 107, 0, 255),
+	canSee = function(ply) return true end,
+	sortOrder = 20,
+}
 
 DarkRP.createCategory{
 	name = "Pistols",
@@ -118,7 +136,7 @@ DarkRP.createCategory{
 }
 
 DarkRP.createCategory{
-	name = "Black Market",
+	name = "Machine Guns",
 	categorises = "shipments",
 	startExpanded = true,
 	color = Color(0, 107, 0, 255),
@@ -126,11 +144,9 @@ DarkRP.createCategory{
 	sortOrder = 100,
 }
 
--- Weapons
-
 DarkRP.createCategory{
-	name = "Melee",
-	categorises = "weapons",
+	name = "Submachine Guns",
+	categorises = "shipments",
 	startExpanded = true,
 	color = Color(0, 107, 0, 255),
 	canSee = function(ply) return true end,

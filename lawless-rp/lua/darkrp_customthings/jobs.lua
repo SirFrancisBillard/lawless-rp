@@ -49,7 +49,7 @@ TEAM_CITIZEN = DarkRP.createJob("Citizen", {
 })
 
 TEAM_LOCKSMITH = DarkRP.createJob("Locksmith", {
-	color = Color(188, 244, 66, 255),
+	color = Color(75, 75, 75, 255),
 	model = {
 		"models/player/Group03/Female_01.mdl",
 		"models/player/Group03/Female_02.mdl",
@@ -69,8 +69,8 @@ TEAM_LOCKSMITH = DarkRP.createJob("Locksmith", {
 	description = [[Locksmiths can use their knowledge and lockpicking ability to commit crimes or help the government.]],
 	weapons = {},
 	command = "locksmith",
-	max = 4,
-	salary = GAMEMODE.Config.normalsalary / 3,
+	max = 8,
+	salary = GAMEMODE.Config.normalsalary,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
@@ -79,26 +79,26 @@ TEAM_LOCKSMITH = DarkRP.createJob("Locksmith", {
 })
 
 TEAM_HACKER = DarkRP.createJob("Hacker", {
-	color = Color(212, 66, 244, 255),
-	model = "models/player/magnusson.mdl",
+	color = Color(150, 15, 150, 255),
+	model = {
+		"models/player/Group03/Female_01.mdl",
+		"models/player/Group03/Female_02.mdl",
+		"models/player/Group03/Female_03.mdl",
+		"models/player/Group03/Female_04.mdl",
+		"models/player/Group03/Female_06.mdl",
+		"models/player/group03/male_01.mdl",
+		"models/player/Group03/Male_02.mdl",
+		"models/player/Group03/male_03.mdl",
+		"models/player/Group03/Male_04.mdl",
+		"models/player/Group03/Male_05.mdl",
+		"models/player/Group03/Male_06.mdl",
+		"models/player/Group03/Male_07.mdl",
+		"models/player/Group03/Male_08.mdl",
+		"models/player/Group03/Male_09.mdl"
+	},
 	description = [[Hackers can use their knowledge and hacking ability to commit crimes or help the government.]],
-	weapons = {},
+	weapons = {"keypad_cracker"},
 	command = "hacker",
-	max = 4,
-	salary = GAMEMODE.Config.normalsalary / 3,
-	admin = 0,
-	vote = false,
-	hasLicense = false,
-	candemote = false,
-	category = "Citizens",
-})
-
-TEAM_DOCTOR = DarkRP.createJob("Doctor", {
-	color = Color(47, 79, 79, 255),
-	model = "models/player/kleiner.mdl",
-	description = [[Doctors can use their knowledge and healing ability to aid criminals or government.]],
-	weapons = {},
-	command = "doctor",
 	max = 4,
 	salary = GAMEMODE.Config.normalsalary,
 	admin = 0,
@@ -108,33 +108,33 @@ TEAM_DOCTOR = DarkRP.createJob("Doctor", {
 	category = "Citizens",
 })
 
-TEAM_GUN = DarkRP.createJob("Gun Dealer", {
-	color = Color(255, 140, 0, 255),
-	model = "models/player/monk.mdl",
-	description = [[Gun Dealers are the only people who can sell high-tier illegal weaponry to other people.
-		Make sure you aren't caught selling illegal firearms to the public! You might get arrested!]],
-	weapons = {},
-	command = "gundealer",
+TEAM_DOCTOR = DarkRP.createJob("Doctor", {
+	color = Color(15, 150, 150, 255),
+	model = {
+		"models/player/Group03/Female_01.mdl",
+		"models/player/Group03/Female_02.mdl",
+		"models/player/Group03/Female_03.mdl",
+		"models/player/Group03/Female_04.mdl",
+		"models/player/Group03/Female_06.mdl",
+		"models/player/group03/male_01.mdl",
+		"models/player/Group03/Male_02.mdl",
+		"models/player/Group03/male_03.mdl",
+		"models/player/Group03/Male_04.mdl",
+		"models/player/Group03/Male_05.mdl",
+		"models/player/Group03/Male_06.mdl",
+		"models/player/Group03/Male_07.mdl",
+		"models/player/Group03/Male_08.mdl",
+		"models/player/Group03/Male_09.mdl"
+	},
+	description = [[Doctor can use their knowledge and healing ability to commit crimes or help the government.]],
+	weapons = {"med_kit"},
+	command = "doctor",
 	max = 4,
-	salary = GAMEMODE.Config.normalsalary / 3,
+	salary = GAMEMODE.Config.normalsalary,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
-	category = "Citizens",
-})
-
-TEAM_BLACKMARKET = DarkRP.createJob("Black Market Dealer", {
-	color = Color(0, 200, 255, 255),
-	model = "models/player/eli.mdl",
-	description = [[Black Market dealers sell highly illegal items to the general public.
-		Make sure you don't get caught!]],
-	weapons = {},
-	command = "blackmarket",
-	max = 4,
-	salary = GAMEMODE.Config.normalsalary / 3,
-	admin = 0,
-	vote = false,
-	hasLicense = false,
+	candemote = false,
 	category = "Citizens",
 })
 
@@ -149,11 +149,11 @@ TEAM_POLICE = DarkRP.createJob("Police Officer", {
 		The Battering Ram can break down the door of a criminal, with a warrant for their arrest.
 		The Battering Ram can also unfreeze frozen props (if enabled).
 		Type /wanted <name> to alert the public to the presence of a criminal.]],
-	weapons = {"arrest_stick", "unarrest_stick", "tfa_nmrih_m16_ch", "tfa_nmrih_m92fs", "stunstick", "door_ram", "weaponchecker"},
+	weapons = {"arrest_stick", "unarrest_stick", "weapon_cs_m4", "weapon_cs_deserteagle", "stunstick", "door_ram", "weaponchecker"},
 	command = "police",
 	max = 12,
 	salary = GAMEMODE.Config.normalsalary * 1.45,
-	admin = 0,
+	admin = 1,
 	vote = true,
 	hasLicense = true,
 	ammo = {
@@ -188,6 +188,7 @@ TEAM_MAYOR = DarkRP.createJob("Mayor", {
 Define which team joining players spawn into and what team you change to if demoted
 ---------------------------------------------------------------------------]]
 GAMEMODE.DefaultTeam = TEAM_CITIZEN
+
 
 --[[---------------------------------------------------------------------------
 Define which teams belong to civil protection

@@ -72,7 +72,7 @@ GM.Config.decalcleaner                  = false
 -- disallowClientsideScripts - Clientside scripts can be very useful for customizing the HUD or to aid in building. This option bans those scripts.
 GM.Config.disallowClientsideScripts     = false
 -- doorwarrants - Enable/disable Warrant requirement to enter property.
-GM.Config.doorwarrants                  = false
+GM.Config.doorwarrants                  = true
 -- dropmoneyondeath - Enable/disable whether people drop money on death.
 GM.Config.dropmoneyondeath              = false
 -- droppocketarrest - Enable/disable whether people drop the stuff in their pockets when they get arrested.
@@ -172,13 +172,13 @@ GM.Config.weaponCheckerHideNoLicense    = false
 Value settings
 ]]
 -- adminnpcs - Whether or not NPCs should be admin only. 0 = everyone, 1 = admin or higher, 2 = superadmin or higher, 3 = rcon only
-GM.Config.adminnpcs                     = 2
+GM.Config.adminnpcs                     = 1
 -- adminsents - Whether or not SENTs should be admin only. 0 = everyone, 1 = admin or higher, 2 = superadmin or higher, 3 = rcon only
 GM.Config.adminsents                    = 1
 -- adminvehicles - Whether or not vehicles should be admin only. 0 = everyone, 1 = admin or higher, 2 = superadmin or higher, 3 = rcon only
-GM.Config.adminvehicles                 = 2
+GM.Config.adminvehicles                 = 1
 -- adminweapons - Who can spawn weapons: 0: admins only, 1: supadmins only, 2: no one
-GM.Config.adminweapons                  = 1
+GM.Config.adminweapons                  = 0
 -- arrestspeed - Sets the max arrest speed.
 GM.Config.arrestspeed                   = 120
 -- babygodtime - How long the babygod lasts.
@@ -203,7 +203,7 @@ GM.Config.jailtimer                     = 120
 -- lockdowndelay - The amount of time a mayor must wait before starting the next lockdown.
 GM.Config.lockdowndelay                 = 120
 -- maxadvertbillboards - The maximum number of /advert billboards a player can place.
-GM.Config.maxadvertbillboards           = 5
+GM.Config.maxadvertbillboards           = 3
 -- maxdoors - Sets the max amount of doors one can own.
 GM.Config.maxdoors                      = 20
 -- maxdrugs - Sets max drugs.
@@ -215,27 +215,27 @@ GM.Config.maxlawboards                  = 2
 -- maxletters - Sets max letters.
 GM.Config.maxletters                    = 10
 -- maxlotterycost - Maximum payment the mayor can set to join a lottery.
-GM.Config.maxlotterycost                = 250000
+GM.Config.maxlotterycost                = 250
 -- maxvehicles - Sets how many vehicles one can buy.
-GM.Config.maxvehicles                   = 6
+GM.Config.maxvehicles                   = 5
 -- microwavefoodcost - Sets the sale price of Microwave Food.
 GM.Config.microwavefoodcost             = 30
 -- minlotterycost - Minimum payment the mayor can set to join a lottery.
 GM.Config.minlotterycost                = 30
 -- Money packets will get removed if they don't get picked up after a while. Set to 0 to disable.
-GM.Config.moneyRemoveTime               = 0
+GM.Config.moneyRemoveTime               = 600
 -- mprintamount - Value of the money printed by the money printer.
-GM.Config.mprintamount                  = 100
+GM.Config.mprintamount                  = 500
 -- normalsalary - Sets the starting salary for newly joined players.
-GM.Config.normalsalary                  = 50
+GM.Config.normalsalary                  = 250
 -- npckillpay - Sets the money given for each NPC kill.
-GM.Config.npckillpay                    = 25
+GM.Config.npckillpay                    = 250
 -- paydelay - Sets how long it takes before people get salary.
 GM.Config.paydelay                      = 180
 -- pocketitems - Sets the amount of objects the pocket can carry.
 GM.Config.pocketitems                   = 10
 -- pricecap - The maximum price of items (using /price).
-GM.Config.pricecap                      = 1000000
+GM.Config.pricecap                      = 5000000
 -- pricemin - The minimum price of items (using /price).
 GM.Config.pricemin                      = 1
 -- propcost - How much prop spawning should cost (prop paying must be enabled for this to have an effect).
@@ -251,7 +251,7 @@ GM.Config.runspeed                      = 240
 -- runspeed - Sets the max running speed for CP teams.
 GM.Config.runspeedcp                    = 255
 -- searchtime - Number of seconds for which a search warrant is valid.
-GM.Config.searchtime                    = 30
+GM.Config.searchtime                    = 120
 -- ShipmentSpawnTime - Antispam time between spawning shipments.
 GM.Config.ShipmentSpamTime              = 1
 -- shipmenttime - The number of seconds it takes for a shipment to spawn.
@@ -259,9 +259,9 @@ GM.Config.shipmentspawntime             = 5
 -- startinghealth - the health when you spawn.
 GM.Config.startinghealth                = 100
 -- startingmoney - your wallet when you join for the first time.
-GM.Config.startingmoney                 = 5000
+GM.Config.startingmoney                 = 50
 -- vehiclecost - Sets the cost of a vehicle (To own it).
-GM.Config.vehiclecost                   = 500
+GM.Config.vehiclecost                   = 40
 -- wallettaxmax - Maximum percentage of tax to be paid.
 GM.Config.wallettaxmax                  = 5
 -- wallettaxmin - Minimum percentage of tax to be paid.
@@ -269,7 +269,7 @@ GM.Config.wallettaxmin                  = 1
 -- wallettaxtime - Time in seconds between taxing players. Requires server restart.
 GM.Config.wallettaxtime                 = 600
 -- wantedtime - Number of seconds for which a player is wanted for.
-GM.Config.wantedtime                    = 180
+GM.Config.wantedtime                    = 120
 -- walkspeed - Sets the max walking speed.
 GM.Config.walkspeed                     = 160
 -- falldamagedamper - The damper on realistic fall damage. Default is 15. Decrease this for more damage.
@@ -279,7 +279,7 @@ GM.Config.falldamageamount              = 10
 -- printeroverheatchance - The likelyhood of a printer overheating. The higher this number, the less likely (minimum 3, default 22).
 GM.Config.printeroverheatchance         = 22
 -- printerreward - Reward for destroying a money printer.
-GM.Config.printerreward                 = 750
+GM.Config.printerreward                 = 950
 
 --[[---------------------------------------------------------------------------
 Other settings
@@ -489,9 +489,9 @@ GM.Config.hudText = "I am a hitman.\nPress E on me to request a hit!"
 -- The text above a hitman when he's got a hit.
 GM.Config.hitmanText = "Hit\naccepted!"
 -- The cooldown time for a hit target (so they aren't spam killed).
-GM.Config.hitTargetCooldown = 30
+GM.Config.hitTargetCooldown = 120
 -- How long a customer has to wait to be able to buy another hit (from the moment the hit is accepted).
-GM.Config.hitCustomerCooldown = 30
+GM.Config.hitCustomerCooldown = 240
 
 --[[---------------------------------------------------------------------------
 Hungermod module

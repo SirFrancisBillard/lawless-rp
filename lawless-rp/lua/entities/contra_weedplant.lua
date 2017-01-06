@@ -36,7 +36,7 @@ if SERVER then
 		self:SetModel("models/props_junk/terracotta01.mdl")
 		self:SetGrown(false)
 		self:SetSeeded(false)
-		local amt = math.random(20, 100)
+		local amt = math.random(120, 300)
 		ply:addMoney(amt)
 		ply:ChatPrint("You have harvested $" .. string.Comma(amt) .. " worth of weed.")
 	end
@@ -45,7 +45,7 @@ if SERVER then
 		if IsValid(ent) and ent.IsWeedSeed and not self:GetSeeded() then
 			self:SetSeeded(true)
 			SafeRemoveEntity(ent)
-			timer.Simple(math.random(50, 175), function()
+			timer.Simple(math.random(100, 350), function()
 				if not IsValid(self) then return end
 				self:Grow()
 			end)

@@ -14,273 +14,372 @@ https://github.com/FPtje/DarkRP/blob/master/gamemode/config/addentities.lua
 For examples and explanation please visit this wiki page:
 http://wiki.darkrp.com/index.php/DarkRP:CustomShipmentFields
 
-
 Add shipments and guns under the following line:
 ---------------------------------------------------------------------------]]
 
--- Pistols
+-- Raiding Tools
 
-DarkRP.createShipment("Glock", {
-	model = "models/weapons/tfa_nmrih/w_fa_glock17.mdl",
-	entity = "tfa_nmrih_g17",
+DarkRP.createShipment("Lockpick", {
+	model = "models/weapons/w_crowbar.mdl",
+	entity = "lockpick",
+	price = 10000,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
+	noship = false,
+	category = "Raiding Tools"
+})
+
+DarkRP.createShipment("Keypad Cracker", {
+	model = "models/weapons/w_c4_planted.mdl",
+	entity = "keypad_cracker",
+	price = 12000,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
+	noship = false,
+	category = "Raiding Tools"
+})
+
+DarkRP.createShipment("Grenade Launcher", {
+	model = "models/weapons/w_shotgun.mdl",
+	entity = "weapon_grenadelauncher",
+	price = 40000,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
+	noship = false,
+	category = "Raiding Tools"
+})
+
+DarkRP.createShipment("C4", {
+	model = "models/weapons/w_c4_planted.mdl",
+	entity = "weapon_cs_c4",
+	price = 60000,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
+	noship = false,
+	category = "Raiding Tools"
+})
+
+DarkRP.createShipment("Rocket Launcher", {
+	model = "models/weapons/w_rocket_launcher.mdl",
+	entity = "weapon_rocketlauncher",
+	price = 80000,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
+	noship = false,
+	category = "Raiding Tools"
+})
+
+-- CSS Weapons
+
+DarkRP.createShipment("M249", {
+	model = "models/weapons/w_mach_m249para.mdl",
+	entity = "weapon_cs_m249",
+	price = 6000,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
+	noship = false,
+	category = "Machine Guns"
+})
+ 
+DarkRP.createShipment("Galil", {
+	model = "models/weapons/w_rif_galil.mdl",
+	entity = "weapon_cs_galil",
+	price = 4000,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
+	noship = false,
+	category = "Rifles"
+})
+ 
+DarkRP.createShipment("AK47", {
+	model = "models/weapons/w_rif_ak47.mdl",
+	entity = "weapon_cs_ak47",
+	price = 4000,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
+	noship = false,
+	category = "Rifles"
+})
+ 
+DarkRP.createShipment("M4A1", {
+	model = "models/weapons/w_rif_m4a1.mdl",
+	entity = "weapon_cs_m4",
+	price = 3900,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
+	noship = false,
+	category = "Rifles"
+})
+ 
+DarkRP.createShipment("Famas", {
+	model = "models/weapons/w_rif_famas.mdl",
+	entity = "weapon_cs_famas",
+	price = 3900,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
+	noship = false,
+	category = "Rifles"
+})
+ 
+DarkRP.createShipment("AWP", {
+	model = "models/weapons/w_snip_awp.mdl",
+	entity = "weapon_cs_awp",
+	price = 5000,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
+	noship = false,
+	category = "Sniper Rifles"
+})
+ 
+DarkRP.createShipment("Scout", {
+	model = "models/weapons/w_snip_scout.mdl",
+	entity = "weapon_cs_scout",
+	price = 4500,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
+	noship = false,
+	category = "Sniper Rifles"
+})
+ 
+DarkRP.createShipment("SteyrAug", {
+	model = "models/weapons/w_rif_aug.mdl",
+	entity = "weapon_cs_aug",
+	price = 4000,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
+	noship = false,
+	category = "Rifles"
+})
+ 
+DarkRP.createShipment("SG552", {
+	model = "models/weapons/w_rif_sg552.mdl",
+	entity = "weapon_cs_sig552",
+	price = 4000,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
+	noship = false,
+	category = "Rifles"
+})
+ 
+DarkRP.createShipment("G3SG1", {
+	model = "models/weapons/w_snip_g3sg1.mdl",
+	entity = "weapon_cs_g3",
+	price = 4000,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
+	noship = false,
+	category = "Sniper Rifles"
+})
+ 
+DarkRP.createShipment("SG550", {
+	model = "models/weapons/w_snip_sg550.mdl",
+	entity = "weapon_cs_sig550",
+	price = 4000,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
+	noship = false,
+	category = "Sniper Rifles" 
+})
+ 
+DarkRP.createShipment("UMP45", {
+	model = "models/weapons/w_smg_ump45.mdl",
+	entity = "weapon_cs_ump",
+	price = 3600,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
+	noship = false,
+	category = "Submachine Guns"
+})
+ 
+DarkRP.createShipment("P90", {
+	model = "models/weapons/w_smg_p90.mdl",
+	entity = "weapon_cs_p90",
+	price = 3500,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
+	noship = false,
+	category = "Submachine Guns"
+})
+ 
+DarkRP.createShipment("TMP", {
+	model = "models/weapons/w_smg_tmp.mdl",
+	entity = "weapon_cs_tmp",
+	price = 3500,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
+	noship = false,
+	category = "Submachine Guns"
+})
+ 
+DarkRP.createShipment("MP5", {
+	model = "models/weapons/w_smg_mp5.mdl",
+	entity = "weapon_cs_mp5",
+	price = 3200,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
+	noship = false,
+	category = "Submachine Guns"
+})
+ 
+DarkRP.createShipment("Mac10", {
+	model = "models/weapons/w_smg_mac10.mdl",
+	entity = "weapon_cs_mac10",
+	price = 3000,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
+	noship = false,
+	category = "Submachine Guns"
+})
+ 
+DarkRP.createShipment("XM1014", {
+	model = "models/weapons/w_shot_xm1014.mdl",
+	entity = "weapon_cs_xm1014",
+	price = 3000,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
+	noship = false,
+	category = "Shotguns"
+})
+ 
+DarkRP.createShipment("Pump Shotgun", {
+	model = "models/weapons/w_shot_m3super90.mdl",
+	entity = "weapon_cs_m3",
 	price = 2500,
-	amount = 1,
-	seperate = false,
-	pricesep = nil,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
 	noship = false,
-	category = "Pistols"
-})
-
-DarkRP.createShipment("Ruger", {
-	model = "models/weapons/tfa_nmrih/w_fa_mkiii.mdl",
-	entity = "tfa_nmrih_mkiii",
-	price = 3500,
-	amount = 1,
-	seperate = false,
-	pricesep = nil,
-	noship = false,
-	category = "Pistols"
-})
-
-DarkRP.createShipment("1911", {
-	model = "models/weapons/tfa_nmrih/w_fa_1911.mdl",
-	entity = "tfa_nmrih_1911",
-	price = 3500,
-	amount = 1,
-	seperate = false,
-	pricesep = nil,
-	noship = false,
-	category = "Pistols"
-})
-
-DarkRP.createShipment("Beretta", {
-	model = "models/weapons/tfa_nmrih/w_fa_m92fs.mdl",
-	entity = "tfa_nmrih_m92fs",
-	price = 4500,
-	amount = 1,
-	seperate = false,
-	pricesep = nil,
-	noship = false,
-	category = "Pistols"
-})
-
-DarkRP.createShipment("Smith & Wesson", {
-	model = "models/weapons/tfa_nmrih/w_fa_sw686.mdl",
-	entity = "tfa_nmrih_sw686",
-	price = 4500,
-	amount = 1,
-	seperate = false,
-	pricesep = nil,
-	noship = false,
-	category = "Pistols"
-})
-
--- Rifles
-
-DarkRP.createShipment("Winchester", {
-	model = "models/weapons/tfa_nmrih/w_fa_win1892.mdl",
-	entity = "tfa_nmrih_1892",
-	price = 8500,
-	amount = 1,
-	seperate = false,
-	pricesep = nil,
-	noship = false,
-	allowed = {TEAM_GUN},
-	category = "Rifles"
-})
-
-DarkRP.createShipment("Siminov", {
-	model = "models/weapons/tfa_nmrih/w_fa_sks.mdl",
-	entity = "tfa_nmrih_sks",
-	price = 10500,
-	amount = 1,
-	seperate = false,
-	pricesep = nil,
-	noship = false,
-	allowed = {TEAM_GUN},
-	category = "Rifles"
-})
-
-DarkRP.createShipment("Colt", {
-	model = "models/weapons/tfa_nmrih/w_fa_m16a4_carryhandle.mdl",
-	entity = "tfa_nmrih_m16_ch",
-	price = 12500,
-	amount = 1,
-	seperate = false,
-	pricesep = nil,
-	noship = false,
-	allowed = {TEAM_GUN},
-	category = "Rifles"
-})
-
-DarkRP.createShipment("AK-47", {
-	model = "models/weapons/tfa_nmrih/w_fa_cz858.mdl",
-	entity = "tfa_nmrih_cz",
-	price = 16500,
-	amount = 1,
-	seperate = false,
-	pricesep = nil,
-	noship = false,
-	allowed = {TEAM_GUN},
-	category = "Rifles"
-})
-
--- Shotguns
-
-DarkRP.createShipment("Mossberg", {
-	model = "models/weapons/tfa_nmrih/w_fa_500a.mdl",
-	entity = "tfa_nmrih_500a",
-	price = 14500,
-	amount = 1,
-	seperate = false,
-	pricesep = nil,
-	noship = false,
-	allowed = {TEAM_GUN},
 	category = "Shotguns"
 })
-
-DarkRP.createShipment("Perennia", {
-	model = "models/weapons/tfa_nmrih/w_fa_sv10.mdl",
-	entity = "tfa_nmrih_sv10",
-	price = 16500,
-	amount = 1,
-	seperate = false,
-	pricesep = nil,
+ 
+DarkRP.createShipment("Frag Grenade", {
+	model = "models/weapons/w_eq_fraggrenade.mdl",
+	entity = "weapon_cs_he",
+	price = 15000,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
 	noship = false,
-	allowed = {TEAM_GUN},
-	category = "Shotguns"
+	category = "Grenades"
 })
-
-DarkRP.createShipment("Remington", {
-	model = "models/weapons/tfa_nmrih/w_fa_870.mdl",
-	entity = "tfa_nmrih_870",
-	price = 18500,
-	amount = 1,
-	seperate = false,
-	pricesep = nil,
+ 
+DarkRP.createShipment("Flashbang", {
+	model = "models/weapons/w_eq_flashbang_thrown.mdl",
+	entity = "weapon_cs_flash",
+	price = 2000,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
 	noship = false,
-	allowed = {TEAM_GUN},
-	category = "Shotguns"
+	category = "Grenades"
 })
-
--- Sniper Rifles
-
-DarkRP.createShipment("Sako", {
-	model = "models/weapons/tfa_nmrih/w_fa_sako85.mdl",
-	entity = "tfa_nmrih_sako",
-	price = 22500,
-	amount = 1,
-	seperate = false,
-	pricesep = nil,
+ 
+DarkRP.createShipment("Smoke Grenade", {
+	model = "models/weapons/w_eq_smokegrenade.mdl",
+	entity = "weapon_cs_smoke",
+	price = 2000,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
 	noship = false,
-	allowed = {TEAM_GUN},
-	category = "Sniper Rifles"
+	category = "Grenades"
 })
-
-DarkRP.createShipment("JAE", {
-	model = "models/weapons/tfa_nmrih/w_fa_jae700.mdl",
-	entity = "tfa_nmrih_jae700",
-	price = 28500,
-	amount = 1,
-	seperate = false,
-	pricesep = nil,
+ 
+DarkRP.createShipment("Dual Elites", {
+	model = "models/weapons/w_pist_elite_dropped.mdl",
+	entity = "weapon_cs_elites",
+	price = 2300,
+	amount = 10,
+	separate = true,
+	pricesep = 250,
 	noship = false,
-	allowed = {TEAM_GUN},
-	category = "Sniper Rifles"
+	category = "Pistols"
 })
-
--- Other
-
-DarkRP.createShipment("Flare Gun", {
-	model = "models/weapons/tfa_nmrih/w_fa_flaregun.mdl",
-	entity = "tfa_nmrih_flaregun",
-	price = 3500,
-	amount = 1,
-	seperate = false,
-	pricesep = nil,
+ 
+DarkRP.createShipment("Deagle", {
+	model = "models/weapons/w_pist_deagle.mdl",
+	entity = "weapon_cs_deagle",
+	price = 2300,
+	amount = 10,
+	separate = true,
+	pricesep = 250,
+	noship = false,
+	category = "Pistols"
+})
+ 
+DarkRP.createShipment("USP", {
+	model = "models/weapons/w_pist_usp.mdl",
+	entity = "weapon_cs_usp",
+	price = 2200,
+	amount = 10,
+	separate = true,
+	pricesep = 240,
+	noship = false,
+	category = "Pistols"
+})
+ 
+DarkRP.createShipment("P228", {
+	model = "models/weapons/w_pist_p228.mdl",
+	entity = "weapon_cs_p228",
+	price = 2100,
+	amount = 10,
+	separate = true,
+	pricesep = 220,
+	noship = false,
+	category = "Pistols"
+})
+ 
+DarkRP.createShipment("Glock", {
+	model = "models/weapons/w_pist_glock18.mdl",
+	entity = "weapon_cs_glock",
+	price = 2000,
+	amount = 10,
+	separate = true,
+	pricesep = 210,
+	noship = false,
+	category = "Pistols"
+})
+ 
+DarkRP.createShipment("Five Seven", {
+	model = "models/weapons/w_pist_fiveseven.mdl",
+	entity = "weapon_cs_fiveseven",
+	price = 1900,
+	amount = 10,
+	separate = true,
+	pricesep = 200,
+	noship = false,
+	category = "Pistols"
+})
+ 
+DarkRP.createShipment("Knife", {
+	model = "models/weapons/w_knife_t.mdl",
+	entity = "weapon_cs_knife",
+	price = 2000,
+	amount = 10,
+	separate = false,
+	pricesep = 0,
 	noship = false,
 	category = "Other"
-})
-
--- Melee
-
-DarkRP.createShipment("Baseball Bat", {
-	model = "models/weapons/tfa_nmrih/w_me_bat_metal.mdl",
-	entity = "tfa_nmrih_bat",
-	price = 1337,
-	amount = 1,
-	seperate = true,
-	pricesep = 600,
-	noship = true,
-	category = "Melee"
-})
-
-DarkRP.createShipment("Kitchen Knife", {
-	model = "models/weapons/tfa_nmrih/w_me_kitknife.mdl",
-	entity = "tfa_nmrih_kknife",
-	price = 1337,
-	amount = 1,
-	seperate = true,
-	pricesep = 700,
-	noship = true,
-	category = "Melee"
-})
-
-DarkRP.createShipment("Sledgehammer", {
-	model = "models/weapons/tfa_nmrih/w_me_sledge.mdl",
-	entity = "tfa_nmrih_sledge",
-	price = 1337,
-	amount = 1,
-	seperate = true,
-	pricesep = 800,
-	noship = true,
-	category = "Melee"
-})
-
-DarkRP.createShipment("Fire Axe", {
-	model = "models/weapons/tfa_nmrih/w_me_axe_fire.mdl",
-	entity = "tfa_nmrih_fireaxe",
-	price = 1337,
-	amount = 1,
-	seperate = true,
-	pricesep = 900,
-	noship = true,
-	category = "Melee"
-})
-
-DarkRP.createShipment("Chainsaw", {
-	model = "models/weapons/tfa_nmrih/w_me_chainsaw.mdl",
-	entity = "tfa_nmrih_chainsaw",
-	price = 1337,
-	amount = 1,
-	seperate = true,
-	pricesep = 1000,
-	noship = true,
-	category = "Melee"
-})
-
--- Black Market
-
-DarkRP.createShipment("TNT", {
-	model = "models/weapons/tfa_nmrih/w_exp_tnt.mdl",
-	entity = "tfa_nmrih_tnt",
-	price = 13500,
-	amount = 1,
-	seperate = false,
-	pricesep = nil,
-	noship = false,
-	allowed = {TEAM_BLACKMARKET},
-	category = "Black Market"
-})
-
-DarkRP.createShipment("Molotov Cocktail", {
-	model = "models/weapons/tfa_nmrih/w_exp_molotov.mdl",
-	entity = "tfa_nmrih_molotov",
-	price = 11500,
-	amount = 1,
-	seperate = false,
-	pricesep = nil,
-	noship = false,
-	allowed = {TEAM_BLACKMARKET},
-	category = "Black Market"
 })

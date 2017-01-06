@@ -91,12 +91,12 @@ DarkRP.createAmmoType("sniperpenetratedround", {
 	name = "Sniper Ammo",
 	model = "models/items/sniper_round_box.mdl",
 	price = 100,
-	amountGiven = 5
+	amountGiven = 30
 })
 
 DarkRP.createAmmoType("nmrih_flare", {
 	name = "Flares",
 	model = "models/props_c17/TrapPropeller_Lever.mdl",
-	price = 40,
-	amountGiven = 2
+	price = 100,
+	amountGiven = 30
 })
