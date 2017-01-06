@@ -9,7 +9,7 @@ ENT.Spawnable = true
 
 if SERVER then
 	function ENT:Initialize()
-		self:SetModel("models/Items/HealthKit.mdl")
+		self:SetModel("models/props_c17/SuitCase_Passenger_Physics.mdl")
 		self:PhysicsInit(SOLID_VPHYSICS)
 		self:SetMoveType(MOVETYPE_VPHYSICS)
 		self:SetSolid(SOLID_VPHYSICS)

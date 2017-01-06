@@ -33,9 +33,9 @@ local ShootSound = Sound("weapons/grenade_launcher1.wav")
 function SWEP:PrimaryAttack()
 	if not self:CanPrimaryAttack() then return end
 
+	self:ShootEffects()
 	self:TakePrimaryAmmo(1)
-
-	self.Weapon:SetNextPrimaryFire(CurTime() + 1)
+	self:SetNextPrimaryFire(CurTime() + 1)
 	self.Owner:ViewPunch(Angle(-10, 0, 0))
 	self:EmitSound(ShootSound)
 
@@ -48,7 +48,6 @@ function SWEP:PrimaryAttack()
 	ent:Spawn()
 
 	local phys = ent:GetPhysicsObject()
-	
 	if not IsValid(phys) then ent:Remove() return end
 
 	local velocity = self.Owner:GetAimVector()
@@ -60,5 +59,6 @@ end
 function SWEP:SecondaryAttack() end
 
 function SWEP:Deploy()
+	self:SetHoldType("rpg")
 	self:SendWeaponAnim(ACT_VM_DRAW)
 end

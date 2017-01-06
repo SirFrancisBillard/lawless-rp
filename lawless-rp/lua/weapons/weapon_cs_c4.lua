@@ -51,7 +51,7 @@ SWEP.HasThrown				= false
 SWEP.CanHolster				= true
 
 function SWEP:Deploy()
-
+	self:SendWeaponAnim(ACT_VM_DRAW)
 end
 
 function SWEP:Holster()
@@ -60,8 +60,7 @@ end
 
 function SWEP:Initialize()
 	self:SetWeaponHoldType(self.HoldType)
-	
-	
+
 	if GetGlobalFloat("CSSC4NextFire",0) == 0 then
 		SetGlobalFloat("CSSC4NextFire", CurTime() - 1)
 	end
@@ -80,13 +79,6 @@ function SWEP:PrimaryAttack()
 	--self.Owner:Freeze(true)
 	--self:TakePrimaryAmmo(1)
 	
-	if SERVER then
-		if not self:AllowedToPlant(true) then
-			self.Owner:ChatPrint("You need to wait " .. string.NiceTime( GetGlobalFloat("CSSC4NextFire",0) - CurTime() ) .. " before using this weapon.")
-			return
-		end
-	end
-	
 	
 	self.CanHolster = false
 	self:SendWeaponAnim(ACT_VM_PRIMARYATTACK)
@@ -104,21 +96,6 @@ function SWEP:PrimaryAttack()
 	--self.ThrowRemove = CurTime() + 3.5
 	
 end
-
-function SWEP:SecondaryAttack()
-
-	if SERVER then
-		if not self:AllowedToPlant(false) then
-			self.Owner:ChatPrint("You need to wait " .. string.NiceTime( GetGlobalFloat("CSSC4NextFire",0) - CurTime() ) .. " before using this weapon.")
-		else
-			self.Owner:ChatPrint("You're allowed to plant this bomb.")
-		end
-	end
-	
-	self:SetNextSecondaryFire(CurTime() + 1)
-
-end
-
 
 function SWEP:EquipThink()
 	if self.IsThrowing == true then
@@ -144,30 +121,6 @@ function SWEP:EquipThink()
 			
 				local foundp = false
 				local founds = false
-				
-				for k,v in pairs(self.Owner:GetWeapons()) do
-					if v:IsScripted() then
-						if foundp == false then
-							if weapons.GetStored(v:GetClass()).WeaponType == "Primary" then
-								self.Owner:SelectWeapon(self.Owner:GetWeapons()[k]:GetClass() )
-								foundp = true
-							end
-						end
-					end
-				end
-				
-				if foundp == false then
-					for k,v in pairs(self.Owner:GetWeapons()) do
-						if v:IsScripted() then
-							if founds == false then
-								if weapons.GetStored(v:GetClass()).WeaponType == "Secondary" then
-									self.Owner:SelectWeapon(self.Owner:GetWeapons()[k]:GetClass() )
-									founds = true
-								end
-							end
-						end
-					end
-				end
 
 				if founds == false and foundp == false then
 					self.Owner:SelectWeapon(self.Owner:GetWeapons()[1]:GetClass() )
@@ -179,10 +132,6 @@ function SWEP:EquipThink()
 	end
 end
 
-function SWEP:Reload()
-	--PrintTable(GetActivities(self))
-end
-
 function SWEP:PlantC4()
 	if CLIENT then return end
 	local EA =  Angle(0,self.Owner:GetAngles().y,0)
@@ -190,9 +139,7 @@ function SWEP:PlantC4()
 
 	self.Owner:SetRunSpeed(self.DefaultRunSpeed)
 	self.Owner:SetWalkSpeed(self.DefaultWalkSpeed)
-	
-	
-	
+
 	local ent = ents.Create("ent_cs_c4")		
 		ent:SetPos(pos)
 		ent:SetAngles(EA)
@@ -200,26 +147,8 @@ function SWEP:PlantC4()
 		ent:Activate()
 		ent:SetNWEntity("owner",self.Owner)
 		--ent:SetOwner(self.Owner)
-		
+
 	ent:EmitSound("weapons/c4/c4_plant.wav")
-	
-	--self.Owner:Freeze(false)
-	
 
-	
-end
-
-function SWEP:AllowedToPlant(reset)
-
-	if GetGlobalFloat("CSSC4NextFire",0) <= CurTime() then
-	
-		if reset == true then
-			SetGlobalFloat("CSSC4NextFire",CurTime() + GetConVarNumber("sv_css_c4_timelimit")*60 )
-		end
-		
-		return true
-	else
-		return false
-	end
-
+	self.Owner:StripWeapon(self.ClassName)
 end

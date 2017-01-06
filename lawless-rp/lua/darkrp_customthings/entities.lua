@@ -63,3 +63,52 @@ DarkRP.createEntity("Ammo Crate", {
 	cmd = "buyammocrate",
 	category = "Ammunition"
 })
+
+-- Pharmaceutical
+
+DarkRP.createEntity("Health Kit", {
+	ent = "pharm_healthkit",
+	model = "models/Items/HealthKit.mdl",
+	price = 16000,
+	max = 2,
+	cmd = "buyhealthkit",
+	category = "Pharmaceutical"
+})
+
+DarkRP.createEntity("Health Vial", {
+	ent = "pharm_healthvial",
+	model = "models/healthvial.mdl",
+	price = 8000,
+	max = 2,
+	cmd = "buyhealthvial",
+	category = "Pharmaceutical"
+})
+
+DarkRP.createEntity("Paracetamol", {
+	ent = "pharm_paracetamol",
+	model = "models/props_junk/garbage_metalcan002a.mdl",
+	price = 6000,
+	max = 2,
+	cmd = "buyparacetamol",
+	category = "Pharmaceutical"
+})
+
+DarkRP.createEntity("Nitrazepam", {
+	ent = "pharm_nitrazepam",
+	model = "models/props_c17/TrapPropeller_Lever.mdl",
+	price = 400,
+	max = 2,
+	cmd = "buynitrazepam",
+	category = "Pharmaceutical"
+})
+
+-- Black Market
+
+DarkRP.createEntity("Kevlar", {
+	ent = "market_kevlar",
+	model = "models/props_c17/SuitCase_Passenger_Physics.mdl",
+	price = 20000,
+	max = 2,
+	cmd = "buykevlar",
+	category = "Black Market"
+})

@@ -55,7 +55,7 @@ DarkRP.createShipment("Grenade Launcher", {
 DarkRP.createShipment("C4", {
 	model = "models/weapons/w_c4_planted.mdl",
 	entity = "weapon_cs_c4",
-	price = 60000,
+	price = 120000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,

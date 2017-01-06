@@ -1,6 +1,6 @@
 ENT.Type = "anim"
 ENT.Base = "base_entity"
-ENT.PrintName = "C4 EXPLOSIVE"
+ENT.PrintName = "C4"
 ENT.Author = ""
 ENT.Information = ""
 ENT.Spawnable = false
@@ -111,7 +111,7 @@ function ENT:Detonate(self,pos)
 
 		util.BlastDamage(self,self:GetNWEntity("owner",self),self:GetPos(),c4radius/3,c4damage/10)
 
-		for k, v in pairs(ents.FindInSphere(self.Entity:GetPos(), 500)) do
+		for k, v in pairs(ents.FindInSphere(self.Entity:GetPos(), 128)) do
 			if v:GetClass() == "prop_physics" then
 				local phys = v:GetPhysicsObject()
 

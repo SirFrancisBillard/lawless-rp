@@ -35,9 +35,9 @@ local ShootSound = Sound("weapons/grenade_launcher1.wav")
 function SWEP:PrimaryAttack()
 	if not self:CanPrimaryAttack() or self.Reloading then return end
 
+	self:ShootEffects()
 	self:TakePrimaryAmmo(1)
-
-	self.Weapon:SetNextPrimaryFire(CurTime() + 1)
+	self:SetNextPrimaryFire(CurTime() + 1)
 	self.Owner:ViewPunch(Angle(-10, 0, 0))
 	self:EmitSound(ShootSound)
 
@@ -50,11 +50,10 @@ function SWEP:PrimaryAttack()
 	ent:Spawn()
 
 	local phys = ent:GetPhysicsObject()
-	
 	if not IsValid(phys) then ent:Remove() return end
 
 	local velocity = self.Owner:GetAimVector()
-	velocity = velocity * 1000
+	velocity = velocity * 4000
 	velocity = velocity + (VectorRand() * 10)
 	phys:ApplyForceCenter(velocity)
 end
@@ -62,12 +61,13 @@ end
 function SWEP:SecondaryAttack() end
 
 function SWEP:Deploy()
-	self.Reloading = false
+	self:SetHoldType("shotgun")
 	self:SendWeaponAnim(ACT_VM_DRAW)
+	self.Reloading = false
 end
 
 function SWEP:Reload()
-	if SWEP:DefaultReload(ACT_VM_RELOAD) then
+	if self:DefaultReload(ACT_VM_RELOAD) then
 		self.Reloading = true
 		timer.Simple(self:SequenceDuration(), function()
 			if not IsValid(self) then return end

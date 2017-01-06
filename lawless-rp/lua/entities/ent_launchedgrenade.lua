@@ -38,10 +38,10 @@ if SERVER then
 
 		util.BlastDamage(self,self:GetNWEntity("owner",self),self:GetPos(),128,150)
 
-		for k, v in pairs(ents.FindInSphere(self.Entity:GetPos(),128)) do
+		for k, v in pairs(ents.FindInSphere(self.Entity:GetPos(), 128)) do
 			if v:GetClass() == "prop_physics" then
 				local phys = v:GetPhysicsObject()
-				if math.random(1, 3) == 1 then
+				if math.random(1, 6) == 1 then
 					constraint.RemoveAll(v)
 					phys:EnableMotion(true)
 				end
@@ -50,5 +50,12 @@ if SERVER then
 		end
 
 		self:Remove()
+	end
+
+	function ENT:PhysicsUpdate(phys)
+		local angles = phys:GetAngles()
+		local velocity = phys:GetVelocity()
+		phys:SetAngles(velocity:Angle())
+		phys:SetVelocity(velocity)
 	end
 end

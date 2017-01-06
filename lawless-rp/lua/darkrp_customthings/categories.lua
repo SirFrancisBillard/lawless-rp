@@ -79,6 +79,15 @@ DarkRP.createCategory{
 	sortOrder = 100,
 }
 
+DarkRP.createCategory{
+	name = "Pharmaceutical",
+	categorises = "entities",
+	startExpanded = true,
+	color = Color(0, 107, 0, 255),
+	canSee = function(ply) return true end,
+	sortOrder = 100,
+}
+
 -- Shipments
 
 DarkRP.createCategory{
