@@ -39,14 +39,6 @@ function ENT:Initialize()
 		self.Progress = 0
 		self.SendMessage = true
 		self.LastUse = 0
-
-		if GetConVar("sv_css_c4_notifyplayers"):GetInt() == 1 then
-			for n,p in pairs(player.GetAll()) do
-				p:PrintMessage(HUD_PRINTCENTER,"Bomb has been planted")
-				p:SendLua("LocalPlayer():EmitSound(\"radio/bombpl.wav\")")
-			end
-		end
-
 	else
 		self.Code = math.random(1,9) .. math.random(0,9) .. math.random(0,9) .. math.random(0,9) .. math.random(0,9) .. math.random(0,9)
 	end
@@ -59,52 +51,11 @@ function ENT:PhysicsCollide(data, physobj)
 	end
 end
 
-function ENT:Use(activator,caller,useType,value)
- 
-	if self:GetNWBool("defusing",false) == false then
-		self:EmitSound("items/ammopickup.wav",100,100)
-		self:SetNWBool("defusing",true)
-	end
-	
-	if ( activator:IsPlayer() ) then
-		if self.NextTick <= CurTime() then
-			self.LastUse = CurTime()
-			self.Progress = self.Progress + 0.05
-			self.NextTick = CurTime() + 0.05
-			self.Using = true
-		end
-
-		self:SetNWInt("defusecount",self.Progress)	
-		
-	end
- 
-end
-
-
 function ENT:Think()
 			
 	if SERVER then
 
 		if self.Progress >= self.DefuseTime  then
-		
-			if self.SendMessage == true then
-				if GetConVar("sv_css_c4_notifyplayers"):GetInt() == 1 then
-					for n,p in pairs(player.GetAll()) do
-				
-						p:PrintMessage(HUD_PRINTCENTER,"Bomb has been defused")
-						p:SendLua("LocalPlayer():EmitSound(\"radio/bombdef.wav\")")
-				
-				
-						timer.Simple(2, function()
-							p:PrintMessage(HUD_PRINTCENTER,"Counter-Terrorists Win")
-							p:SendLua("LocalPlayer():EmitSound(\"radio/ctwin.wav\")")
-						end)
-				
-					end
-				end
-				self.SendMessage = false
-			end
-			
 			SafeRemoveEntityDelayed(self,5)
 			self:SetNWBool("stopboom",true)
 		else
@@ -145,56 +96,57 @@ end
 function ENT:Detonate(self,pos)
 	if SERVER then
 	
-		local c4damage = GetConVar("sv_css_c4_damage"):GetInt() or 1
-		local c4radius = GetConVar("sv_css_c4_radius"):GetInt() or 1
-	
-	
-	
+		local c4damage = GetConVar("sv_css_c4_damage"):GetInt() or 300
+		local c4radius = GetConVar("sv_css_c4_radius"):GetInt() or 500
+
 		if not self:IsValid() then return end
 		local effectdata = EffectData()
 			effectdata:SetStart( pos + Vector(0,0,100)) // not sure if we need a start and origin (endpoint) for this effect, but whatever
 			effectdata:SetOrigin( pos )
 			effectdata:SetScale( c4radius/1000 )
-			effectdata:SetRadius( c4radius )
+			effectdata:SetRadius( c4radius/3 )
 		util.Effect( "HelicopterMegaBomb", effectdata )	
 
 		self:EmitSound("weapons/c4/c4_explode1.wav",100,100)
-		
-		
-		util.BlastDamage(self,self:GetNWEntity("owner",self),self:GetPos(),c4radius,c4damage)
-		
+
+		util.BlastDamage(self,self:GetNWEntity("owner",self),self:GetPos(),c4radius/3,c4damage/10)
+
+		for k, v in pairs(ents.FindInSphere(self.Entity:GetPos(), 500)) do
+			if v:GetClass() == "prop_physics" then
+				local phys = v:GetPhysicsObject()
+
+				if DestructiveC4.UnweldProps then
+					constraint.RemoveAll(v)
+				end
+
+				if DestructiveC4.UnfreezeProps then
+					phys:EnableMotion(true)
+				end
+
+				phys:Wake()
+			end
+		end
+
 		--[[
 		if table.Count(ents.FindInSphere(self:GetPos(),c4radius)) > 0 then
 			for k,v in pairs(ents.FindInSphere(self:GetPos(),c4radius)) do
-		
+
 				local distance = v:GetPos():Distance( self:GetPos() )
-				
+
 				local calc =  1 - (distance/c4radius)
-		
+
 				local dmginfo = DamageInfo()
 					dmginfo:SetDamage( c4damage * calc  )
 					dmginfo:SetDamageType( DMG_BLAST )
 					dmginfo:SetAttacker( self:GetNWEntity("owner",self) )
-					
+
 					local DDD_Distance = (self:GetPos() - v:GetPos()):GetNormalized( )
 					local DDD_Radius = Vector(c4radius,c4radius,c4radius)
-					
-					v:TakeDamageInfo(dmginfo)
-		
-			end
 
+					v:TakeDamageInfo(dmginfo)
+			end
 		end
 		--]]
-
-		if SERVER then
-			if GetConVar("sv_css_c4_notifyplayers"):GetInt() == 1 then
-				for n,p in pairs(player.GetAll()) do
-					p:PrintMessage(HUD_PRINTCENTER,"Terrorists Win")
-					p:SendLua("LocalPlayer():EmitSound(\"radio/terwin.wav\")")
-				end
-			end
-		end
-		
 		self:Remove()
 	end
 end
