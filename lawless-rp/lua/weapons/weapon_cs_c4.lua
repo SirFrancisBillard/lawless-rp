@@ -9,7 +9,7 @@ SWEP.Base					= "weapon_cs_base"
 SWEP.WeaponType				= "Free"
 
 SWEP.Cost					= 0
-SWEP.CSSMoveSpeed				= 250
+SWEP.CSSMoveSpeed			= 250
 
 SWEP.Spawnable				= true
 SWEP.AdminOnly				= true
@@ -60,11 +60,6 @@ end
 
 function SWEP:Initialize()
 	self:SetWeaponHoldType(self.HoldType)
-
-	if GetGlobalFloat("CSSC4NextFire",0) == 0 then
-		SetGlobalFloat("CSSC4NextFire", CurTime() - 1)
-	end
-	
 end
 
 function SWEP:PrimaryAttack()
@@ -116,16 +111,6 @@ function SWEP:EquipThink()
 				self.IsThrowing = false
 				self.HasAnimated = false
 				self.CanHolster	= true
-				
-				if CLIENT then return end
-			
-				local foundp = false
-				local founds = false
-
-				if founds == false and foundp == false then
-					self.Owner:SelectWeapon(self.Owner:GetWeapons()[1]:GetClass() )
-				end
-
 			end
 		end
 	
@@ -147,8 +132,31 @@ function SWEP:PlantC4()
 		ent:Activate()
 		ent:SetNWEntity("owner",self.Owner)
 		--ent:SetOwner(self.Owner)
-
 	ent:EmitSound("weapons/c4/c4_plant.wav")
-
-	self.Owner:StripWeapon(self.ClassName)
+	if not self.Owner.CSS_C4_COUNT then
+		self.Owner.CSS_C4_COUNT = 0
+	end
+	self.Owner.CSS_C4_COUNT = self.Owner.CSS_C4_COUNT - 1
+	if self.Owner.CSS_C4_COUNT < 1 then
+		self.Owner:StripWeapon(self.ClassName)
+	end
 end
+
+if SERVER then
+	function SWEP:Equip(ply)
+		PrintMessage(HUD_PRINTTALK, "use this instead")
+	end
+
+	function SWEP:EquipAmmo(ply)
+		PrintMessage(HUD_PRINTTALK, "use this")
+		if not ply.CSS_C4_COUNT then
+			ply.CSS_C4_COUNT = 1
+			return
+		end
+		ply.CSS_C4_COUNT = ply.CSS_C4_COUNT + 1
+	end
+end
+
+hook.Add("DoPlayerDeath", "CSS_C4_REMOVE_ON_DEATH", function(ply, atk, dmg)
+	ply.CSS_C4_COUNT = 0
+end)
