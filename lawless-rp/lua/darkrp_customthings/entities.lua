@@ -123,5 +123,6 @@ DarkRP.createEntity("Kevlar", {
 	price = 20000,
 	max = 2,
 	cmd = "buykevlar",
-	category = "Black Market"
+	category = "Black Market",
+	allowed = {TEAM_BLACKMARKET}
 })

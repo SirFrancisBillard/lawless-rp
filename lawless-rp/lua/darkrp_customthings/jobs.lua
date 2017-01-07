@@ -49,7 +49,7 @@ TEAM_CITIZEN = DarkRP.createJob("Citizen", {
 })
 
 TEAM_LOCKSMITH = DarkRP.createJob("Locksmith", {
-	color = Color(75, 75, 75, 255),
+	color = Color(150, 150, 75, 255),
 	model = "models/player/odessa.mdl",
 	description = [[Locksmiths can use their knowledge and lockpicking ability to commit crimes or help the government.]],
 	weapons = {"lockpick"},
@@ -64,7 +64,7 @@ TEAM_LOCKSMITH = DarkRP.createJob("Locksmith", {
 })
 
 TEAM_HACKER = DarkRP.createJob("Hacker", {
-	color = Color(150, 15, 150, 255),
+	color = Color(150, 15, 75, 255),
 	model = "models/player/magnusson.mdl",
 	description = [[Hackers can use their knowledge and hacking ability to commit crimes or help the government.
 		Can crack keypads to get into secure bases.]],
@@ -72,6 +72,39 @@ TEAM_HACKER = DarkRP.createJob("Hacker", {
 	command = "hacker",
 	max = 4,
 	salary = GAMEMODE.Config.normalsalary,
+	admin = 0,
+	vote = false,
+	hasLicense = false,
+	candemote = false,
+	category = "Citizens",
+})
+
+TEAM_BAR = DarkRP.createJob("Bartender", {
+	color = Color(100, 100, 200, 255),
+	model = "models/player/mossman.mdl",
+	description = [[Bartenders have an liquor license, allowing them to set up a bar and sell alcohol.
+		Scamming people is NOT allowed.
+		Selling alcohol is legal.]],
+	weapons = {},
+	command = "bartender",
+	max = 4,
+	salary = GAMEMODE.Config.normalsalary,
+	admin = 0,
+	vote = false,
+	hasLicense = false,
+	candemote = false,
+	category = "Citizens",
+})
+
+TEAM_DAUGHTER = DarkRP.createJob("Mayor's Daughter", {
+	color = Color(200, 125, 200, 255),
+	model = "models/player/alyx.mdl",
+	description = [[The mayor's daughter makes more money than the average citizen, however she is a prime target for kidnapping.
+		Be careful.]],
+	weapons = {},
+	command = "daughter",
+	max = 1,
+	salary = GAMEMODE.Config.normalsalary * 2,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
@@ -158,7 +191,7 @@ TEAM_GUN_SHADY = DarkRP.createJob("Shady Gun Dealer", {
 	weapons = {},
 	command = "shadygun",
 	max = 4,
-	salary = GAMEMODE.Config.normalsalary / 3,
+	salary = GAMEMODE.Config.normalsalary / 5,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
@@ -189,8 +222,24 @@ TEAM_BLACKMARKET = DarkRP.createJob("Black Market Dealer", {
 		Selling black market items is illegal.]],
 	weapons = {},
 	command = "blackmarket",
+	max = 6,
+	salary = GAMEMODE.Config.normalsalary / 5,
+	admin = 0,
+	vote = false,
+	hasLicense = false,
+	category = "Dealers",
+})
+
+TEAM_DRUG = DarkRP.createJob("Drug Dealer", {
+	color = Color(45, 255, 255, 255),
+	model = "models/player/soldier_stripped.mdl",
+	description = [[Drug dealers sell drugs to people.
+		Scamming people is allowed.
+		Selling drugs is illegal.]],
+	weapons = {},
+	command = "drug",
 	max = 4,
-	salary = GAMEMODE.Config.normalsalary / 3,
+	salary = GAMEMODE.Config.normalsalary / 5,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
@@ -201,11 +250,12 @@ TEAM_EXPLOSIVES = DarkRP.createJob("Explosive Dealer", {
 	color = Color(45, 255, 255, 255),
 	model = "models/player/soldier_stripped.mdl",
 	description = [[Explosive dealers sell explosive weapons and raiding tools.
+		Scamming people is allowed.
 		Selling explosives is highly illegal.]],
 	weapons = {},
 	command = "explosive",
 	max = 4,
-	salary = GAMEMODE.Config.normalsalary / 3,
+	salary = GAMEMODE.Config.normalsalary / 5,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
@@ -251,7 +301,7 @@ TEAM_THIEF = DarkRP.createJob("Thief", {
 	weapons = {"lockpick"},
 	command = "thief",
 	max = 8,
-	salary = GAMEMODE.Config.normalsalary,
+	salary = GAMEMODE.Config.normalsalary / 5,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
@@ -266,7 +316,7 @@ TEAM_HITMAN = DarkRP.createJob("Hitman", {
 	weapons = {"weapon_cs_glock"},
 	command = "hitman",
 	max = 2,
-	salary = GAMEMODE.Config.normalsalary,
+	salary = GAMEMODE.Config.normalsalary / 5,
 	admin = 0,
 	vote = false,
 	hasLicense = false,
@@ -296,7 +346,7 @@ TEAM_REBEL = DarkRP.createJob("Rebel", {
 	weapons = {"weapon_cs_glock"},
 	command = "rebel",
 	max = 12,
-	salary = GAMEMODE.Config.normalsalary,
+	salary = GAMEMODE.Config.normalsalary / 5,
 	admin = 0,
 	vote = false,
 	hasLicense = false,

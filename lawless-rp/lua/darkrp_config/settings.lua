@@ -465,7 +465,7 @@ GM.Config.hideNonBuyable = false
 -- Hide only the items that you have the wrong job for (or for which the customCheck says no).
 -- When you set this option to true and hideNonBuyable to false, you WILL see e.g. items that are too expensive for you to buy.
 -- but you won't see gundealer shipments when you have the citizen job.
-GM.Config.hideTeamUnbuyable = false
+GM.Config.hideTeamUnbuyable = true
 
 --[[---------------------------------------------------------------------------
 AFK module
