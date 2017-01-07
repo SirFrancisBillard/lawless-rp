@@ -313,7 +313,7 @@ DarkRP.createShipment("Dual Elites", {
 	price = 23000,
 	amount = 10,
 	separate = true,
-	pricesep = 250,
+	pricesep = 2300,
 	noship = false,
 	category = "Pistols"
 })
@@ -324,7 +324,7 @@ DarkRP.createShipment("Deagle", {
 	price = 90000,
 	amount = 10,
 	separate = true,
-	pricesep = 250,
+	pricesep = 9000,
 	noship = false,
 	category = "Pistols"
 })
@@ -335,7 +335,7 @@ DarkRP.createShipment("USP", {
 	price = 22000,
 	amount = 10,
 	separate = true,
-	pricesep = 240,
+	pricesep = 2200,
 	noship = false,
 	category = "Pistols"
 })
@@ -346,7 +346,7 @@ DarkRP.createShipment("P228", {
 	price = 21000,
 	amount = 10,
 	separate = true,
-	pricesep = 220,
+	pricesep = 2100,
 	noship = false,
 	category = "Pistols"
 })
@@ -357,7 +357,7 @@ DarkRP.createShipment("Glock", {
 	price = 20000,
 	amount = 10,
 	separate = true,
-	pricesep = 210,
+	pricesep = 2000,
 	noship = false,
 	category = "Pistols"
 })
@@ -368,7 +368,7 @@ DarkRP.createShipment("Five Seven", {
 	price = 19000,
 	amount = 10,
 	separate = true,
-	pricesep = 200,
+	pricesep = 1900,
 	noship = false,
 	category = "Pistols"
 })

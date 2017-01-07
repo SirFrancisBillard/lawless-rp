@@ -11,7 +11,7 @@ SWEP.WeaponType				= "Secondary"
 SWEP.Purpose				= "Who cares about practicality when you've got a giant gun that shoots huge bullets?"
 
 SWEP.Cost					= 650
-SWEP.CSSMoveSpeed				= 250
+SWEP.CSSMoveSpeed			= 250
 
 SWEP.Spawnable				= true
 SWEP.AdminOnly				= false
@@ -35,10 +35,10 @@ SWEP.Primary.Ammo			= "css_50ae"
 SWEP.Primary.Automatic 		= false
 
 SWEP.RecoilMul				= 1.4
-SWEP.SideRecoilMul			= 1
+SWEP.SideRecoilMul			= 0
 SWEP.VelConeMul				= 1
-SWEP.HeatMul				= 3
-SWEP.CoolMul				= 0.75
+SWEP.HeatMul				= 0.8
+SWEP.CoolMul				= 0
 
 SWEP.HasScope 				= false
 SWEP.ZoomAmount 			= 0.75

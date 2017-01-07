@@ -22,17 +22,17 @@ SWEP.WorldModel				= "models/weapons/w_mach_m249para.mdl"
 SWEP.VModelFlip 			= false
 SWEP.HoldType				= "ar2"
 
-SWEP.Primary.Damage			= 80
+SWEP.Primary.Damage			= 160
 SWEP.Primary.NumShots		= 1
 SWEP.Primary.Sound			= Sound("Weapon_M249.Single")
-SWEP.Primary.Cone			= 0.02
+SWEP.Primary.Cone			= 0.012
 SWEP.Primary.ClipSize		= 200
 SWEP.Primary.SpareClip		= 400
 SWEP.Primary.Delay			= 0.06 --1/(750/60)
 SWEP.Primary.Ammo			= "css_556mm"
 SWEP.Primary.Automatic 		= true
 
-SWEP.RecoilMul				= 2.6
+SWEP.RecoilMul				= 1
 SWEP.SideRecoilMul			= 0.25
 SWEP.VelConeMul				= 1
 SWEP.HeatMul				= 0.5
