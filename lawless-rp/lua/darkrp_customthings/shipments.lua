@@ -436,7 +436,7 @@ local function MakeM9kShipment(name, mdl, cls, cost, amt, sep, sep_cost, no, who
 	DarkRP.createShipment(name, {
 		model = mdl,
 		entity = cls,
-		price = cost * 100,
+		price = cost * 10,
 		amount = amt,
 		separate = sep,
 		pricesep = sep_cost,
@@ -456,7 +456,7 @@ MakeM9kShipment("HK 16", "models/weapons/w_hk_416.mdl", "m9k_m416", 5000, 10, fa
 MakeM9kShipment("Scar", "models/weapons/w_fn_scar_h.mdl", "m9k_scar", 6000, 10, false, nil, false, {TEAM_GUN_SHADY}, "Rifles")
 MakeM9kShipment("TAR-21", "models/weapons/w_imi_tar21.mdl", "m9k_tar21", 5000, 10, false, nil, false, {TEAM_GUN_SHADY}, "Rifles")
 MakeM9kShipment("Val", "models/weapons/w_dmg_vally.mdl", "m9k_val", 5575, 10, false, nil, false, {TEAM_GUN_SHADY}, "Rifles")
-MakeM9kShipment("SR-3M Vikhr", "models/weapons/w_dmg_vikhr.mdl", "m9k_vikhr", 5000, 10, false, nil, false, {TEAM_GUN_SHADY})
+MakeM9kShipment("SR-3M Vikhr", "models/weapons/w_dmg_vikhr.mdl", "m9k_vikhr", 5000, 10, false, nil, false, {TEAM_GUN_SHADY}, "Rifles")
 MakeM9kShipment("Winchester 73", "models/weapons/w_winchester_1873.mdl", "m9k_winchester73", 3500, 10, false, nil, false, {TEAM_GUN_SHADY}, "Rifles")
 
 --SHOTGUNS
@@ -476,8 +476,8 @@ MakeM9kShipment("Dragunov SVU", "models/weapons/w_dragunov_svu.mdl", "m9k_svu", 
 MakeM9kShipment("Dragunov SVU Single", "models/weapons/w_dragunov_svu.mdl", "m9k_svu", 900, 1, false, 0, false, {TEAM_GUN_SHADY}, "Sniper Rifles")
 MakeM9kShipment("SVD Dragunov", "models/weapons/w_svd_dragunov.mdl", "m9k_dragunov", 8500, 10, false, 123, false, {TEAM_GUN_SHADY}, "Sniper Rifles")
 MakeM9kShipment("SVD Dragunov Single", "models/weapons/w_svd_dragunov.mdl", "m9k_dragunov", 950, 1, false, 123, false, {TEAM_GUN_SHADY}, "Sniper Rifles")
-MakeM9kShipment("Intervention", "models/weapons/v_snp_int.mdl", "m9k_intervention", 12500, 10, false, 0, false, {TEAM_GUN_SHADY}, "Sniper Rifles")
-MakeM9kShipment("Intervention Single", "models/weapons/v_snp_int.mdl", "m9k_intervention", 1500, 1, false, 0, false, {TEAM_GUN_SHADY}, "Sniper Rifles")
+MakeM9kShipment("Intervention", "models/weapons/w_snip_int.mdl", "m9k_intervention", 12500, 10, false, 0, false, {TEAM_GUN_SHADY}, "Sniper Rifles")
+MakeM9kShipment("Intervention Single", "models/weapons/w_snip_int.mdl", "m9k_intervention", 1500, 1, false, 0, false, {TEAM_GUN_SHADY}, "Sniper Rifles")
 MakeM9kShipment("PSG-1", "models/weapons/w_hk_psg1.mdl", "m9k_psg1", 7000, 10, false, 0, false, {TEAM_GUN_SHADY}, "Sniper Rifles")
 MakeM9kShipment("PSG-1 Single", "models/weapons/w_hk_psg1.mdl", "m9k_psg1", 800, 1, false, 0, false, {TEAM_GUN_SHADY}, "Sniper Rifles")
 MakeM9kShipment("AW 50", "models/weapons/w_acc_int_aw50.mdl", "m9k_aw50", 10000, 10, false, 123, false, {TEAM_GUN_SHADY}, "Sniper Rifles")

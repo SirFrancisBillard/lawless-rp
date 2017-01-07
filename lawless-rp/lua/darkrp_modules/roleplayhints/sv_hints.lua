@@ -1,24 +1,16 @@
 
 local Hints = {
-	-- "Don't like dropping your items on death? Be more scared of dying!",
-	-- "Don't like dropping your items when arrested? Don't get arrested!",
-	-- "Wish to be a police officer? Be a vigilante instead!",
-	"Witnessed an RDM? Tell the police!",
-	-- "Ever get that feeling where you just want to shoot somebody? Go ahead!",
-	"Did the person you are mugging pull a gun? Shoot them!",
-	"You're a thief because you steal, you don't steal because you're a thief.",
-	"Wish you could become a job, but can't find it on the menu? Roleplay it!",
-	"Want to be part of the Mafia? Roleplay it!",
-	-- "Want to be part of a gang? Make one! There is nothing stopping you.",
-	-- "Did somebody raid you without adverting? Put up better security next time!",
-	-- "Are you getting mugged, kidnapped, or robbed? Pull a gun!",
-	-- "Want to be a gangster as a citizen? Go ahead!",
-	-- "Think the police are OP? Don't shoot people then!",
-	-- "Think guns should be cheaper? Don't do anything that requires a gun!",
-	"Don't like the mayor's laws? Assassinate him!",
-	"Bored? Start a war with the government!"
+	"Weapons with large capacity, like the M60, are excellent for sustained fire. Use them to provide covering fire for teammates and supress enemies.",
+	"When using a USP or M4A1, press the use key and secondary attack simultaneously to silence your weapon. This will reduce damage but will conceal your position when firing.",
+	"When using a glock or famas, press the use key and secondary attack simultaneously to toggle burst fire.",
+	"The M249 and minigun are devastating at close ranges. Use them when raiding small rooms.",
+	"The double barrel's secondary fire outputs massive amounts of damage, but uses more ammunition. Use it to eliminate heavily armored personnel instantly.",
+	"Good positioning and the element of surprise can turn the tables on any firefight. Use this to your advantage by strategically placing props and remaining unseen.",
+	"Shady gun dealers sell much better weapons, but be careful, they can scam you!",
+	"The deagle is capable of instantly killing personnel within 100 meters, but is very expensive and has high recoil for a pistol.",
+	"C4, rockets, and grenade launchers can blow down props and doors. Use them when raiding well-defended bases."
 }
 
-timer.Create("ShowRoleplayHints", 360, 0, function()
+timer.Create("ShowRoleplayHints", 300, 0, function()
 	PrintMessage(HUD_PRINTTALK, Hints[math.random(#Hints)])
 end)
