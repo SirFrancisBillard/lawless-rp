@@ -197,6 +197,21 @@ TEAM_BLACKMARKET = DarkRP.createJob("Black Market Dealer", {
 	category = "Dealers",
 })
 
+TEAM_EXPLOSIVES = DarkRP.createJob("Explosive Dealer", {
+	color = Color(45, 255, 255, 255),
+	model = "models/player/soldier_stripped.mdl",
+	description = [[Explosive dealers sell explosive weapons and raiding tools.
+		Selling explosives is highly illegal.]],
+	weapons = {},
+	command = "explosive",
+	max = 4,
+	salary = GAMEMODE.Config.normalsalary / 3,
+	admin = 0,
+	vote = false,
+	hasLicense = false,
+	category = "Dealers",
+})
+
 TEAM_MEDIC = DarkRP.createJob("Paramedic", {
 	color = Color(47, 79, 79, 255),
 	model = {"models/player/hostage/hostage_02.mdl", "models/player/hostage/hostage_03.mdl"},
@@ -215,11 +230,11 @@ TEAM_MEDIC = DarkRP.createJob("Paramedic", {
 
 TEAM_SURGEON = DarkRP.createJob("Surgeon", {
 	color = Color(47, 79, 79, 255),
-	model = {"models/player/hostage/hostage_02.mdl", "models/player/hostage/hostage_03.mdl"},
+	model = "models/player/kleiner.mdl",
 	description = [[Surgeons can set up hospitals to perform surgery.
 		Extract bullets out of flesh, amputate limbs, and all the other fucked up stuff you do.
 		Can set up a hospital where people come to heal or charge into the battle to team up with paramedics.]],
-	weapons = {"weapon_cs_knife"},
+	weapons = {"med_kit", "weapon_cs_knife"},
 	command = "surgeon",
 	max = 2,
 	salary = GAMEMODE.Config.normalsalary,
@@ -236,6 +251,21 @@ TEAM_THIEF = DarkRP.createJob("Thief", {
 	weapons = {"lockpick"},
 	command = "thief",
 	max = 8,
+	salary = GAMEMODE.Config.normalsalary,
+	admin = 0,
+	vote = false,
+	hasLicense = false,
+	candemote = false,
+	category = "Criminals",
+})
+
+TEAM_HITMAN = DarkRP.createJob("Hitman", {
+	color = Color(75, 75, 75, 255),
+	model = "models/player/leet.mdl",
+	description = [[Hitmen get paid to kill people.]],
+	weapons = {"weapon_cs_glock"},
+	command = "hitman",
+	max = 2,
 	salary = GAMEMODE.Config.normalsalary,
 	admin = 0,
 	vote = false,
@@ -274,7 +304,7 @@ TEAM_REBEL = DarkRP.createJob("Rebel", {
 	ammo = {
 		["css_9mm"] = 180,
 	},
-	category = "Criminals",
+	category = "Rebels",
 })
 
 TEAM_REBELLEADER = DarkRP.createJob("Rebel Leader", {
@@ -315,7 +345,7 @@ GAMEMODE.CivilProtection = {
 --[[---------------------------------------------------------------------------
 Jobs that are hitmen (enables the hitman menu)
 ---------------------------------------------------------------------------]]
--- DarkRP.addHitmanTeam(TEAM_MOB)
+DarkRP.addHitmanTeam(TEAM_HITMAN)
 
 -- CHARACTER JOBS
 

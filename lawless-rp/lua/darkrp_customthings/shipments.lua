@@ -28,7 +28,7 @@ DarkRP.createShipment("Lockpick", {
 	pricesep = 0,
 	noship = false,
 	category = "Raiding Tools",
-	allowed = {TEAM_BLACKMARKET, TEAM_LOCKPICK, TEAM_THIEF}
+	allowed = {TEAM_BLACKMARKET, TEAM_LOCKSMITH, TEAM_THIEF}
 })
 
 DarkRP.createShipment("Keypad Cracker", {

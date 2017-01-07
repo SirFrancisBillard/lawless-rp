@@ -4,7 +4,7 @@ if CLIENT then
 end
 
 SWEP.Category				= "Counter-Strike"
-SWEP.PrintName				= "GALIL"
+SWEP.PrintName				= "Galil"
 SWEP.Base					= "weapon_cs_base"
 SWEP.WeaponType				= "Primary"
 SWEP.Cost					= 2000
