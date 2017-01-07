@@ -81,7 +81,8 @@ DarkRP.createEntity("Health Kit", {
 	price = 16000,
 	max = 2,
 	cmd = "buyhealthkit",
-	category = "Pharmaceutical"
+	category = "Pharmaceutical",
+	allowed = {TEAM_MEDIC, TEAM_SURGEON}
 })
 
 DarkRP.createEntity("Health Vial", {
@@ -90,7 +91,8 @@ DarkRP.createEntity("Health Vial", {
 	price = 8000,
 	max = 2,
 	cmd = "buyhealthvial",
-	category = "Pharmaceutical"
+	category = "Pharmaceutical",
+	allowed = {TEAM_MEDIC, TEAM_SURGEON}
 })
 
 DarkRP.createEntity("Paracetamol", {
@@ -99,7 +101,8 @@ DarkRP.createEntity("Paracetamol", {
 	price = 6000,
 	max = 2,
 	cmd = "buyparacetamol",
-	category = "Pharmaceutical"
+	category = "Pharmaceutical",
+	allowed = {TEAM_MEDIC, TEAM_SURGEON}
 })
 
 DarkRP.createEntity("Nitrazepam", {
@@ -108,7 +111,8 @@ DarkRP.createEntity("Nitrazepam", {
 	price = 400,
 	max = 2,
 	cmd = "buynitrazepam",
-	category = "Pharmaceutical"
+	category = "Pharmaceutical",
+	allowed = {TEAM_MEDIC, TEAM_SURGEON}
 })
 
 -- Black Market

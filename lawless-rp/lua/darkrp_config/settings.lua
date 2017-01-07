@@ -138,7 +138,7 @@ GM.Config.respawninjail                 = true
 -- restrictallteams - Enable/disable Players can only be citizen until an admin allows them.
 GM.Config.restrictallteams              = false
 -- restrictbuypistol - Enabling this feature makes /buy available only to Gun Dealers.
-GM.Config.restrictbuypistol             = false
+GM.Config.restrictbuypistol             = true
 -- restrictdrop - Enable/disable restricting the weapons players can drop. Setting this to true disallows weapons from shipments from being dropped.
 GM.Config.restrictdrop                  = false
 -- revokeLicenseOnJobChange - Whether licenses are revoked when a player changes jobs.
@@ -197,7 +197,7 @@ GM.Config.doorcost                      = 30
 -- entremovedelay - how long to wait before removing a bought entity after disconnect.
 GM.Config.entremovedelay                = 0
 -- gunlabweapon - The weapon that the gunlab spawns.
-GM.Config.gunlabweapon                  = "weapon_p2282"
+GM.Config.gunlabweapon                  = "weapon_cs_glock"
 -- jailtimer - Sets the jailtimer (in seconds).
 GM.Config.jailtimer                     = 120
 -- lockdowndelay - The amount of time a mayor must wait before starting the next lockdown.

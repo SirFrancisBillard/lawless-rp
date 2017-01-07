@@ -29,7 +29,16 @@ DarkRP.createCategory{
 	startExpanded = true,
 	color = Color(0, 107, 0, 255),
 	canSee = function(ply) return true end,
-	sortOrder = 100,
+	sortOrder = 95,
+}
+
+DarkRP.createCategory{
+	name = "Criminals",
+	categorises = "jobs",
+	startExpanded = true,
+	color = Color(0, 107, 0, 255),
+	canSee = function(ply) return true end,
+	sortOrder = 96,
 }
 
 DarkRP.createCategory{
@@ -38,7 +47,43 @@ DarkRP.createCategory{
 	startExpanded = true,
 	color = Color(0, 107, 0, 255),
 	canSee = function(ply) return true end,
+	sortOrder = 97,
+}
+
+DarkRP.createCategory{
+	name = "Dealers",
+	categorises = "jobs",
+	startExpanded = true,
+	color = Color(0, 107, 0, 255),
+	canSee = function(ply) return true end,
+	sortOrder = 98,
+}
+
+DarkRP.createCategory{
+	name = "Medical",
+	categorises = "jobs",
+	startExpanded = true,
+	color = Color(0, 107, 0, 255),
+	canSee = function(ply) return true end,
+	sortOrder = 99,
+}
+
+DarkRP.createCategory{
+	name = "Rebels",
+	categorises = "jobs",
+	startExpanded = true,
+	color = Color(0, 107, 0, 255),
+	canSee = function(ply) return true end,
 	sortOrder = 100,
+}
+
+DarkRP.createCategory{
+	name = "Characters",
+	categorises = "jobs",
+	startExpanded = true,
+	color = Color(0, 107, 0, 255),
+	canSee = function(ply) return true end,
+	sortOrder = 101,
 }
 
 -- Entities
