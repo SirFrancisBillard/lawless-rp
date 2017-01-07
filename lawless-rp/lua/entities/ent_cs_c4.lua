@@ -1,25 +1,23 @@
+AddCSLuaFile()
+
 ENT.Type = "anim"
 ENT.Base = "base_entity"
 ENT.PrintName = "C4"
 ENT.Author = ""
 ENT.Information = ""
 ENT.Spawnable = false
-ENT.AdminSpawnable = false 
-
-AddCSLuaFile()
+ENT.AdminSpawnable = false
 
 function ENT:Initialize()
-
 	if SERVER then
-	
-		self:SetModel("models/weapons/w_c4_planted.mdl") 
+		self:SetModel("models/weapons/w_c4_planted.mdl")
 		self:PhysicsInit(SOLID_VPHYSICS)
 		self:SetMoveType(MOVETYPE_VPHYSICS)
 		self:SetSolid(SOLID_VPHYSICS)
 		self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
 
 		self:SetUseType(CONTINUOUS_USE)
-	
+
 		local phys = self:GetPhysicsObject()
 		if phys:IsValid() then
 			phys:Wake()
@@ -27,10 +25,10 @@ function ENT:Initialize()
 			--phys:EnableMotion(false)
 			--phys:EnableCollisions(false)
 		end
-	
+
 		self.Delay = CurTime() + GetConVar("sv_css_c4_time_explosion"):GetInt()
 		self.DefuseTime = GetConVar("sv_css_c4_time_defuse"):GetInt()
-		self:SetNWBool("stopboom",false)
+		self:SetNWBool("stopboom", false)
 		self.First = true
 		self.NextBeep = 0
 		self.BeepLatch = 0
@@ -40,9 +38,8 @@ function ENT:Initialize()
 		self.SendMessage = true
 		self.LastUse = 0
 	else
-		self.Code = math.random(1,9) .. math.random(0,9) .. math.random(0,9) .. math.random(0,9) .. math.random(0,9) .. math.random(0,9)
+		self.Code = math.random(1, 9) .. math.random(0, 9) .. math.random(0, 9) .. math.random(0, 9) .. math.random(0, 9) .. math.random(0, 9)
 	end
-
 end
 
 function ENT:PhysicsCollide(data, physobj)
@@ -52,32 +49,26 @@ function ENT:PhysicsCollide(data, physobj)
 end
 
 function ENT:Think()
-			
 	if SERVER then
-
 		if self.Progress >= self.DefuseTime  then
 			SafeRemoveEntityDelayed(self,5)
-			self:SetNWBool("stopboom",true)
+			self:SetNWBool("stopboom", true)
 		else
-		
 			if self.LastUse + 0.1 <= CurTime() then
 				self.Progress = 0
-				self:SetNWInt("defusecount",self.Progress)
-				self:SetNWBool("defusing",false)				
+				self:SetNWInt("defusecount", self.Progress)
+				self:SetNWBool("defusing", false)
 			end
-			
 		end
-		
 
-	
 		if CurTime() > self.Delay then 
 			if self:GetNWBool("stopboom",false) == false then
 				self:Detonate(self,self:GetPos())
 			end
 		end
-	
+
 		local BeepMod = self.Delay - CurTime()
-	
+
 		if self:GetNWBool("stopboom",false) == false then
 			if self.NextBeep <= CurTime() then
 				self:EmitSound("weapons/c4/c4_beep1.wav")
@@ -85,7 +76,7 @@ function ENT:Think()
 				self.NextBeep = BeepMod/15 + CurTime()
 				self.BeepLatch = BeepMod/30 + CurTime()
 			end
-		
+
 			if self.BeepLatch <= CurTime() then
 				self:SetNWBool("beep",false)
 			end
@@ -95,35 +86,30 @@ end
 
 function ENT:Detonate(self,pos)
 	if SERVER then
-	
 		local c4damage = GetConVar("sv_css_c4_damage"):GetInt() or 300
 		local c4radius = GetConVar("sv_css_c4_radius"):GetInt() or 500
 
 		if not self:IsValid() then return end
 		local effectdata = EffectData()
-			effectdata:SetStart( pos + Vector(0,0,100)) // not sure if we need a start and origin (endpoint) for this effect, but whatever
-			effectdata:SetOrigin( pos )
-			effectdata:SetScale( c4radius/1000 )
-			effectdata:SetRadius( c4radius/3 )
-		util.Effect( "HelicopterMegaBomb", effectdata )	
+			effectdata:SetStart(pos + Vector(0,0,100)) -- not sure if we need a start and origin (endpoint) for this effect, but whatever
+			effectdata:SetOrigin(pos)
+			effectdata:SetScale(c4radius/1000)
+			effectdata:SetRadius(c4radius/3)
+		util.Effect("HelicopterMegaBomb", effectdata)	
 
-		self:EmitSound("weapons/c4/c4_explode1.wav",100,100)
+		self:EmitSound("weapons/c4/c4_explode1.wav", 100, 100)
 
-		util.BlastDamage(self,self:GetNWEntity("owner",self),self:GetPos(),c4radius/3,c4damage/10)
+		util.BlastDamage(self, self:GetNWEntity("owner",self), self:GetPos(), c4radius/3, c4damage/4)
 
 		for k, v in pairs(ents.FindInSphere(self.Entity:GetPos(), 128)) do
 			if v:GetClass() == "prop_physics" then
 				local phys = v:GetPhysicsObject()
-
-				if DestructiveC4.UnweldProps then
-					constraint.RemoveAll(v)
-				end
-
-				if DestructiveC4.UnfreezeProps then
-					phys:EnableMotion(true)
-				end
-
+				constraint.RemoveAll(v)
+				phys:EnableMotion(true)
 				phys:Wake()
+			elseif v:GetClass() == "func_door" or v:GetClass() == "func_door_rotating" or v:GetClass() == "prop_door_rotating" then
+				v:Fire("Unlock")
+				v:Fire("Open")
 			end
 		end
 
@@ -156,43 +142,38 @@ local mat = Material("sprites/redglow1")
 function ENT:Draw()
 	if CLIENT then
 		self:DrawModel()
-		
+
 		local Size = GetConVar("sv_css_c4_time_defuse"):GetInt()
 		local Var = Size - self:GetNWInt("defusecount",0)
-		
-		
+
 		--cam.Start3D2D( self:GetPos() + self:GetUp()*9 + self:GetForward()*3 + self:GetRight()*4.5, self:GetAngles() + Angle(0,-90,0), 1/20 ) -- for progressbar
-		cam.Start3D2D( self:GetPos() + self:GetUp()*9 + self:GetForward()*3.5 + self:GetRight()*2, self:GetAngles() + Angle(0,-90,0), 0.125 )	
-			
-			
+		cam.Start3D2D( self:GetPos() + self:GetUp()*9 + self:GetForward()*3.5 + self:GetRight()*2, self:GetAngles() + Angle(0,-90,0), 0.125 )
+
+
 			--[[
 
-		
-		
-			
-		
 			--				box	x			y			width	height	color
 			draw.RoundedBox( 0, -Size/2 - 0, -Size/20 - 0, Size + 2, Size/10 + 2, Color(255,255,255) ) -- border
 			
 			draw.RoundedBox( 0, -Size/2 + 1, -Size/20 + 1, Var, Size/10, Color(255,0,0) ) -- actual
 			]]--
-			
+
 			rand1 = math.random(0,9)
 			rand2 = math.random(0,9)
 			rand3 = math.random(0,9)
 			rand4 = math.random(0,9)
 			rand5 = math.random(0,9)
 			rand6 = math.random(0,9)
-	
+
 			local CodeExplode = string.Explode("",self.Code)
-			
+
 			Code1 = CodeExplode[1]
 			Code2 = CodeExplode[2]
 			Code3 = CodeExplode[3]
 			Code4 = CodeExplode[4]
 			Code5 = CodeExplode[5]
 			Code6 = CodeExplode[6]
-			
+
 			if Var >= (Size/6)*5 then
 				text = rand1 .. rand2.. rand3 .. rand4 .. rand5 .. rand6
 			elseif Var >= (Size/6)*4 then
@@ -208,21 +189,18 @@ function ENT:Draw()
 			else
 				text = Code1 .. Code2 .. Code3 .. Code4 .. Code5 .. Code6
 			end
-			
+
 			if self:GetNWBool("defusing",false) == true then
 				draw.SimpleText( text, "DebugFixed", 0, 0, Color(255,0,0,255), 0, 0 )
 			end
-			
-		cam.End3D2D()
-		
-	
-		if self:GetNWBool("beep",false) == true then
 
+		cam.End3D2D()
+
+		if self:GetNWBool("beep",false) == true then
 			cam.Start3D(EyePos(),EyeAngles())
 				render.SetMaterial( mat )
 				render.DrawSprite( self:GetPos() + self:GetUp()*10, 32, 32, Color(255,0,0,255))
 			cam.End3D()
-
 		end
 	end
 end

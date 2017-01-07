@@ -69,28 +69,22 @@ function SWEP:PrimaryAttack()
 	self.HasThrown = false
 	self.HasAnimated = false
 
-	
-	
-	--self.Owner:Freeze(true)
-	--self:TakePrimaryAmmo(1)
-	
-	
 	self.CanHolster = false
 	self:SendWeaponAnim(ACT_VM_PRIMARYATTACK)
-	
+
 	self.DefaultWalkSpeed = self.Owner:GetWalkSpeed()
 	self.DefaultRunSpeed = self.Owner:GetRunSpeed()
-	
+
 	self.Owner:SetRunSpeed(0.01)
 	self.Owner:SetWalkSpeed(0.01)
-	
+
 	self.IsThrowing = true
-	
+
 	self.ThrowAnimation = CurTime() + 3
 	self.Throw = CurTime() + 3.1
-	--self.ThrowRemove = CurTime() + 3.5
-	
 end
+
+function SWEP:SecondaryAttack() end
 
 function SWEP:EquipThink()
 	if self.IsThrowing == true then
@@ -143,10 +137,6 @@ function SWEP:PlantC4()
 end
 
 if SERVER then
-	function SWEP:Equip(ply)
-		PrintMessage(HUD_PRINTTALK, "use this instead")
-	end
-
 	function SWEP:EquipAmmo(ply)
 		PrintMessage(HUD_PRINTTALK, "use this")
 		if not ply.CSS_C4_COUNT then

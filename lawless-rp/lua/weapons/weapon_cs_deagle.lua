@@ -8,6 +8,8 @@ SWEP.PrintName				= "DESERT EAGLE"
 SWEP.Base					= "weapon_cs_base"
 SWEP.WeaponType				= "Secondary"
 
+SWEP.Purpose				= "Who cares about practicality when you've got a giant gun that shoots huge bullets?"
+
 SWEP.Cost					= 650
 SWEP.CSSMoveSpeed				= 250
 
@@ -22,17 +24,17 @@ SWEP.WorldModel				= "models/weapons/w_pist_deagle.mdl"
 SWEP.VModelFlip 			= false
 SWEP.HoldType				= "revolver"
 
-SWEP.Primary.Damage			= 54
+SWEP.Primary.Damage			= 800
 SWEP.Primary.NumShots		= 1
 SWEP.Primary.Sound			= Sound("Weapon_DEagle.Single")
-SWEP.Primary.Cone			= 0.003
+SWEP.Primary.Cone			= 0.001
 SWEP.Primary.ClipSize		= 7
 SWEP.Primary.SpareClip		= 35
 SWEP.Primary.Delay			= 0.225
 SWEP.Primary.Ammo			= "css_50ae"
 SWEP.Primary.Automatic 		= false
 
-SWEP.RecoilMul				= 2
+SWEP.RecoilMul				= 1.4
 SWEP.SideRecoilMul			= 1
 SWEP.VelConeMul				= 1
 SWEP.HeatMul				= 3

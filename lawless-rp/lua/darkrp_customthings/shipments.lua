@@ -22,7 +22,7 @@ Add shipments and guns under the following line:
 DarkRP.createShipment("Lockpick", {
 	model = "models/weapons/w_crowbar.mdl",
 	entity = "lockpick",
-	price = 10000,
+	price = 100000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -33,7 +33,7 @@ DarkRP.createShipment("Lockpick", {
 DarkRP.createShipment("Keypad Cracker", {
 	model = "models/weapons/w_c4_planted.mdl",
 	entity = "keypad_cracker",
-	price = 12000,
+	price = 120000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -44,7 +44,7 @@ DarkRP.createShipment("Keypad Cracker", {
 DarkRP.createShipment("Grenade Launcher", {
 	model = "models/weapons/w_shotgun.mdl",
 	entity = "weapon_grenadelauncher",
-	price = 40000,
+	price = 400000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -55,7 +55,7 @@ DarkRP.createShipment("Grenade Launcher", {
 DarkRP.createShipment("C4", {
 	model = "models/weapons/w_c4_planted.mdl",
 	entity = "weapon_cs_c4",
-	price = 120000,
+	price = 1200000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -66,7 +66,7 @@ DarkRP.createShipment("C4", {
 DarkRP.createShipment("Rocket Launcher", {
 	model = "models/weapons/w_rocket_launcher.mdl",
 	entity = "weapon_rocketlauncher",
-	price = 80000,
+	price = 800000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -79,7 +79,7 @@ DarkRP.createShipment("Rocket Launcher", {
 DarkRP.createShipment("M249", {
 	model = "models/weapons/w_mach_m249para.mdl",
 	entity = "weapon_cs_m249",
-	price = 6000,
+	price = 420000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -90,7 +90,7 @@ DarkRP.createShipment("M249", {
 DarkRP.createShipment("Galil", {
 	model = "models/weapons/w_rif_galil.mdl",
 	entity = "weapon_cs_galil",
-	price = 4000,
+	price = 40000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -101,7 +101,7 @@ DarkRP.createShipment("Galil", {
 DarkRP.createShipment("AK47", {
 	model = "models/weapons/w_rif_ak47.mdl",
 	entity = "weapon_cs_ak47",
-	price = 4000,
+	price = 40000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -112,7 +112,7 @@ DarkRP.createShipment("AK47", {
 DarkRP.createShipment("M4A1", {
 	model = "models/weapons/w_rif_m4a1.mdl",
 	entity = "weapon_cs_m4",
-	price = 3900,
+	price = 39000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -123,7 +123,7 @@ DarkRP.createShipment("M4A1", {
 DarkRP.createShipment("Famas", {
 	model = "models/weapons/w_rif_famas.mdl",
 	entity = "weapon_cs_famas",
-	price = 3900,
+	price = 39000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -134,7 +134,7 @@ DarkRP.createShipment("Famas", {
 DarkRP.createShipment("AWP", {
 	model = "models/weapons/w_snip_awp.mdl",
 	entity = "weapon_cs_awp",
-	price = 5000,
+	price = 50000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -145,7 +145,7 @@ DarkRP.createShipment("AWP", {
 DarkRP.createShipment("Scout", {
 	model = "models/weapons/w_snip_scout.mdl",
 	entity = "weapon_cs_scout",
-	price = 4500,
+	price = 45000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -153,10 +153,10 @@ DarkRP.createShipment("Scout", {
 	category = "Sniper Rifles"
 })
  
-DarkRP.createShipment("SteyrAug", {
+DarkRP.createShipment("Aug", {
 	model = "models/weapons/w_rif_aug.mdl",
 	entity = "weapon_cs_aug",
-	price = 4000,
+	price = 40000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -167,7 +167,7 @@ DarkRP.createShipment("SteyrAug", {
 DarkRP.createShipment("SG552", {
 	model = "models/weapons/w_rif_sg552.mdl",
 	entity = "weapon_cs_sig552",
-	price = 4000,
+	price = 40000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -178,7 +178,7 @@ DarkRP.createShipment("SG552", {
 DarkRP.createShipment("G3SG1", {
 	model = "models/weapons/w_snip_g3sg1.mdl",
 	entity = "weapon_cs_g3",
-	price = 4000,
+	price = 40000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -189,7 +189,7 @@ DarkRP.createShipment("G3SG1", {
 DarkRP.createShipment("SG550", {
 	model = "models/weapons/w_snip_sg550.mdl",
 	entity = "weapon_cs_sig550",
-	price = 4000,
+	price = 40000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -200,7 +200,7 @@ DarkRP.createShipment("SG550", {
 DarkRP.createShipment("UMP45", {
 	model = "models/weapons/w_smg_ump45.mdl",
 	entity = "weapon_cs_ump",
-	price = 3600,
+	price = 36000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -211,7 +211,7 @@ DarkRP.createShipment("UMP45", {
 DarkRP.createShipment("P90", {
 	model = "models/weapons/w_smg_p90.mdl",
 	entity = "weapon_cs_p90",
-	price = 3500,
+	price = 35000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -222,7 +222,7 @@ DarkRP.createShipment("P90", {
 DarkRP.createShipment("TMP", {
 	model = "models/weapons/w_smg_tmp.mdl",
 	entity = "weapon_cs_tmp",
-	price = 3500,
+	price = 35000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -233,7 +233,7 @@ DarkRP.createShipment("TMP", {
 DarkRP.createShipment("MP5", {
 	model = "models/weapons/w_smg_mp5.mdl",
 	entity = "weapon_cs_mp5",
-	price = 3200,
+	price = 32000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -244,7 +244,7 @@ DarkRP.createShipment("MP5", {
 DarkRP.createShipment("Mac10", {
 	model = "models/weapons/w_smg_mac10.mdl",
 	entity = "weapon_cs_mac10",
-	price = 3000,
+	price = 30000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -255,7 +255,7 @@ DarkRP.createShipment("Mac10", {
 DarkRP.createShipment("XM1014", {
 	model = "models/weapons/w_shot_xm1014.mdl",
 	entity = "weapon_cs_xm1014",
-	price = 3000,
+	price = 30000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -266,7 +266,7 @@ DarkRP.createShipment("XM1014", {
 DarkRP.createShipment("Pump Shotgun", {
 	model = "models/weapons/w_shot_m3super90.mdl",
 	entity = "weapon_cs_m3",
-	price = 2500,
+	price = 25000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -277,7 +277,7 @@ DarkRP.createShipment("Pump Shotgun", {
 DarkRP.createShipment("Frag Grenade", {
 	model = "models/weapons/w_eq_fraggrenade.mdl",
 	entity = "weapon_cs_he",
-	price = 15000,
+	price = 35000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -288,7 +288,7 @@ DarkRP.createShipment("Frag Grenade", {
 DarkRP.createShipment("Flashbang", {
 	model = "models/weapons/w_eq_flashbang_thrown.mdl",
 	entity = "weapon_cs_flash",
-	price = 2000,
+	price = 20000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -299,7 +299,7 @@ DarkRP.createShipment("Flashbang", {
 DarkRP.createShipment("Smoke Grenade", {
 	model = "models/weapons/w_eq_smokegrenade.mdl",
 	entity = "weapon_cs_smoke",
-	price = 2000,
+	price = 20000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,
@@ -310,7 +310,7 @@ DarkRP.createShipment("Smoke Grenade", {
 DarkRP.createShipment("Dual Elites", {
 	model = "models/weapons/w_pist_elite_dropped.mdl",
 	entity = "weapon_cs_elites",
-	price = 2300,
+	price = 23000,
 	amount = 10,
 	separate = true,
 	pricesep = 250,
@@ -321,7 +321,7 @@ DarkRP.createShipment("Dual Elites", {
 DarkRP.createShipment("Deagle", {
 	model = "models/weapons/w_pist_deagle.mdl",
 	entity = "weapon_cs_deagle",
-	price = 2300,
+	price = 90000,
 	amount = 10,
 	separate = true,
 	pricesep = 250,
@@ -332,7 +332,7 @@ DarkRP.createShipment("Deagle", {
 DarkRP.createShipment("USP", {
 	model = "models/weapons/w_pist_usp.mdl",
 	entity = "weapon_cs_usp",
-	price = 2200,
+	price = 22000,
 	amount = 10,
 	separate = true,
 	pricesep = 240,
@@ -343,7 +343,7 @@ DarkRP.createShipment("USP", {
 DarkRP.createShipment("P228", {
 	model = "models/weapons/w_pist_p228.mdl",
 	entity = "weapon_cs_p228",
-	price = 2100,
+	price = 21000,
 	amount = 10,
 	separate = true,
 	pricesep = 220,
@@ -354,7 +354,7 @@ DarkRP.createShipment("P228", {
 DarkRP.createShipment("Glock", {
 	model = "models/weapons/w_pist_glock18.mdl",
 	entity = "weapon_cs_glock",
-	price = 2000,
+	price = 20000,
 	amount = 10,
 	separate = true,
 	pricesep = 210,
@@ -365,7 +365,7 @@ DarkRP.createShipment("Glock", {
 DarkRP.createShipment("Five Seven", {
 	model = "models/weapons/w_pist_fiveseven.mdl",
 	entity = "weapon_cs_fiveseven",
-	price = 1900,
+	price = 19000,
 	amount = 10,
 	separate = true,
 	pricesep = 200,
@@ -376,7 +376,7 @@ DarkRP.createShipment("Five Seven", {
 DarkRP.createShipment("Knife", {
 	model = "models/weapons/w_knife_t.mdl",
 	entity = "weapon_cs_knife",
-	price = 2000,
+	price = 20000,
 	amount = 10,
 	separate = false,
 	pricesep = 0,

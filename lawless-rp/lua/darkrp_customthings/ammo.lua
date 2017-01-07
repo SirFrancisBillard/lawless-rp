@@ -69,7 +69,7 @@ Add new ammo types under the next line!
 DarkRP.createAmmoType("SMG1_Grenade", {
 	name = "Grenade",
 	model = "models/Items/AR2_Grenade.mdl",
-	price = 80,
+	price = 300,
 	amountGiven = 1
 })
 
@@ -78,4 +78,18 @@ DarkRP.createAmmoType("RPG_Round", {
 	model = "models/weapons/w_missile_closed.mdl",
 	price = 500,
 	amountGiven = 1
+})
+
+DarkRP.createAmmoType("SMG1_Grenade", {
+	name = "Grenade Box",
+	model = "models/props_lab/box01a.mdl",
+	price = 3000,
+	amountGiven = 10
+})
+
+DarkRP.createAmmoType("RPG_Round", {
+	name = "Rocket Box",
+	model = "models/props_junk/cardboard_box004a.mdl",
+	price = 5000,
+	amountGiven = 10
 })

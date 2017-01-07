@@ -39,7 +39,7 @@ SWEP.HeatMul				= 1.5
 SWEP.CoolMul				= 0.6
 
 SWEP.HasScope 				= false
-SWEP.ZoomAmount 			= 1
+SWEP.ZoomAmount 			= 0.5
 SWEP.HasCrosshair 			= true
 SWEP.HasCSSZoom 			= false
 

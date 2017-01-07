@@ -6,9 +6,35 @@ ENT.PrintName = "Money Printer"
 ENT.Author = "Sir Francis Billard"
 ENT.Category = "Lawless RP"
 ENT.Spawnable = true
+ENT.Model = "models/props_c17/consolebox01a.mdl"
+
+ENT.damage = 100
+
+ENT.LevelColors = {}
+ENT.LevelColors[1] = Color(255, 255, 0)
+ENT.LevelColors[2] = ENT.LevelColors[1]
+ENT.LevelColors[3] = ENT.LevelColors[1]
+ENT.LevelColors[4] = Color(255, 0, 255)
+ENT.LevelColors[5] = ENT.LevelColors[4]
+ENT.LevelColors[6] = ENT.LevelColors[4]
+ENT.LevelColors[7] = Color(0, 255, 0)
+ENT.LevelColors[8] = ENT.LevelColors[7]
+ENT.LevelColors[9] = ENT.LevelColors[7]
+ENT.LevelColors[10] = Color(0, 255, 255)
+ENT.LevelColors[11] = ENT.LevelColors[10]
+ENT.LevelColors[12] = ENT.LevelColors[10]
+ENT.LevelColors[13] = Color(150, 0, 255)
+ENT.LevelColors[14] = ENT.LevelColors[13]
+ENT.LevelColors[15] = ENT.LevelColors[13]
+ENT.LevelColors[16] = Color(255, 0, 0)
+ENT.LevelColors[17] = ENT.LevelColors[16]
+ENT.LevelColors[18] = ENT.LevelColors[16]
+ENT.LevelColors[19] = Color(0, 0, 255)
+ENT.LevelColors[20] = ENT.LevelColors[19]
 
 function ENT:SetupDataTables()
 	self:NetworkVar("Int", 0, "price")
+	self:NetworkVar("Int", 1, "Level")
 	self:NetworkVar("Entity", 0, "owning_ent")
 end
 
@@ -17,7 +43,7 @@ if SERVER then
 
 	local PrintMore
 	function ENT:Initialize()
-		self:SetModel("models/props_c17/consolebox01a.mdl")
+		self:SetModel(self.Model)
 		self:PhysicsInit(SOLID_VPHYSICS)
 		self:SetMoveType(MOVETYPE_VPHYSICS)
 		self:SetSolid(SOLID_VPHYSICS)
@@ -27,11 +53,14 @@ if SERVER then
 		self.sparking = false
 		self.damage = 100
 		self.IsMoneyPrinter = true
-		timer.Simple(math.random(100, 350), function() PrintMore(self) end)
+		timer.Simple(math.random(30, 60) - self:GetLevel(), function() PrintMore(self) end)
 
 		self.sound = CreateSound(self, Sound("ambient/levels/labs/equipment_printer_loop1.wav"))
 		self.sound:SetSoundLevel(52)
 		self.sound:PlayEx(1, 100)
+
+		self:SetLevel(0)
+		self:SetColor(self.LevelColors[self:GetLevel() + 1])
 	end
 
 	function ENT:OnTakeDamage(dmg)
@@ -112,13 +141,15 @@ if SERVER then
 			amount = 250
 		end
 
-		DarkRP.createMoneyBag(Vector(MoneyPos.x + 15, MoneyPos.y, MoneyPos.z + 15), amount)
+		DarkRP.createMoneyBag(Vector(MoneyPos.x + 15, MoneyPos.y, MoneyPos.z + 15), 750 + (50 * self:GetLevel()))
+		self:SetLevel(math.Clamp(self:GetLevel() + 1, 0, 19))
+		self:SetColor(self.LevelColors[self:GetLevel() + 1])
+
 		self.sparking = false
-		timer.Simple(math.random(100, 350), function() PrintMore(self) end)
+		timer.Simple(math.random(30, 60) - self:GetLevel(), function() PrintMore(self) end)
 	end
 
 	function ENT:Think()
-
 		if self:WaterLevel() > 0 then
 			self:Destruct()
 			self:Remove()
@@ -157,14 +188,19 @@ if CLIENT then
 
 		surface.SetFont("HUDNumber5")
 		local text = DarkRP.getPhrase("money_printer")
+
+		local level = "Level " .. (self:GetLevel() + 1)
+
 		local TextWidth = surface.GetTextSize(text)
-		local TextWidth2 = surface.GetTextSize(owner)
+		local TextWidth2 = surface.GetTextSize(level)
+		local TextWidth3 = surface.GetTextSize(owner)
 
 		Ang:RotateAroundAxis(Ang:Up(), 90)
 
 		cam.Start3D2D(Pos + Ang:Up() * 11.5, Ang, 0.11)
-			draw.WordBox(2, -TextWidth * 0.5, -30, text, "HUDNumber5", Color(140, 0, 0, 100), Color(255,255,255,255))
-			draw.WordBox(2, -TextWidth2 * 0.5, 18, owner, "HUDNumber5", Color(140, 0, 0, 100), Color(255,255,255,255))
+			draw.WordBox(2, -TextWidth * 0.5, -80, text, "HUDNumber5", Color(140, 0, 0, 100), Color(255,255,255,255))
+			draw.WordBox(2, -TextWidth2 * 0.5, -32, level, "HUDNumber5", Color(140, 0, 0, 100), Color(255,255,255,255))
+			draw.WordBox(2, -TextWidth3 * 0.5, 16, owner, "HUDNumber5", Color(140, 0, 0, 100), Color(255,255,255,255))
 		cam.End3D2D()
 	end
 

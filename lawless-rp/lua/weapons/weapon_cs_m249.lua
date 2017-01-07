@@ -4,12 +4,12 @@ if CLIENT then
 end
 
 SWEP.Category				= "Counter-Strike"
-SWEP.PrintName				= "M249 PARA"
+SWEP.PrintName				= "M249"
 SWEP.Base					= "weapon_cs_base"
 SWEP.WeaponType				= "Primary"
 
 SWEP.Cost					= 5750
-SWEP.CSSMoveSpeed				= 220
+SWEP.CSSMoveSpeed			= 220
 
 SWEP.Spawnable				= true
 SWEP.AdminOnly				= false
@@ -22,17 +22,17 @@ SWEP.WorldModel				= "models/weapons/w_mach_m249para.mdl"
 SWEP.VModelFlip 			= false
 SWEP.HoldType				= "ar2"
 
-SWEP.Primary.Damage			= 35
+SWEP.Primary.Damage			= 80
 SWEP.Primary.NumShots		= 1
 SWEP.Primary.Sound			= Sound("Weapon_M249.Single")
-SWEP.Primary.Cone			= 0.0075
-SWEP.Primary.ClipSize		= 100
-SWEP.Primary.SpareClip		= 200
-SWEP.Primary.Delay			= 0.08 --1/(750/60)
+SWEP.Primary.Cone			= 0.02
+SWEP.Primary.ClipSize		= 200
+SWEP.Primary.SpareClip		= 400
+SWEP.Primary.Delay			= 0.06 --1/(750/60)
 SWEP.Primary.Ammo			= "css_556mm"
 SWEP.Primary.Automatic 		= true
 
-SWEP.RecoilMul				= 1
+SWEP.RecoilMul				= 2.6
 SWEP.SideRecoilMul			= 0.25
 SWEP.VelConeMul				= 1
 SWEP.HeatMul				= 0.5
@@ -49,7 +49,7 @@ SWEP.HasBurstFire 			= false
 SWEP.HasSilencer 			= false 
 SWEP.HasDoubleZoom			= false
 SWEP.HasSideRecoil			= true
-SWEP.HasDownRecoil			= true
+SWEP.HasDownRecoil			= false
 
 SWEP.HasIronSights 			= true
 SWEP.EnableIronCross		= true

@@ -21,14 +21,14 @@ if SERVER then
 
 		if phys:IsValid() then
 			phys:Wake()
-			phys:AddAngleVelocity(Vector(15,0,0))
+			phys:AddAngleVelocity(Vector(15, 0, 0))
 		end
 	end
 
-	function ENT:PhysicsCollide( data, physobj )
+	function ENT:PhysicsCollide(data, physobj)
 		if not self:IsValid() then return end
 		local effectdata = EffectData()
-			effectdata:SetStart(self:GetPos() + Vector(0,0,100))
+			effectdata:SetStart(self:GetPos() + Vector(0, 0, 100))
 			effectdata:SetOrigin(self:GetPos())
 			effectdata:SetScale(0.8)
 			effectdata:SetRadius(128)
@@ -36,16 +36,17 @@ if SERVER then
 
 		self:EmitSound("phx/explode0" .. math.random(0, 6) .. ".wav",100,100)
 
-		util.BlastDamage(self,self:GetNWEntity("owner",self),self:GetPos(),128,150)
+		util.BlastDamage(self, self:GetNWEntity("owner",self), self:GetPos(), 200, 150)
 
 		for k, v in pairs(ents.FindInSphere(self.Entity:GetPos(), 128)) do
-			if v:GetClass() == "prop_physics" then
+			if math.random(1, 5) == 1 and v:GetClass() == "prop_physics" then
 				local phys = v:GetPhysicsObject()
-				if math.random(1, 6) == 1 then
-					constraint.RemoveAll(v)
-					phys:EnableMotion(true)
-				end
+				constraint.RemoveAll(v)
+				phys:EnableMotion(true)
 				phys:Wake()
+			elseif math.random(1, 5) == 1 and (v:GetClass() == "func_door" or v:GetClass() == "func_door_rotating" or v:GetClass() == "prop_door_rotating") then
+				v:Fire("Unlock")
+				v:Fire("Open")
 			end
 		end
 

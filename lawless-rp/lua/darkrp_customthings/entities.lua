@@ -21,8 +21,17 @@ DarkRP.createEntity("Money Printer", {
 	ent = "contra_moneyprinter",
 	model = "models/props_c17/consolebox01a.mdl",
 	price = 1000,
-	max = 4,
+	max = 8,
 	cmd = "buymoneyprinter",
+	category = "Contraband"
+})
+
+DarkRP.createEntity("Armored Money Printer", {
+	ent = "contra_moneyprinter_armored",
+	model = "models/props_c17/consolebox01a.mdl",
+	price = 2000,
+	max = 4,
+	cmd = "buyarmoredmoneyprinter",
 	category = "Contraband"
 })
 
@@ -48,7 +57,7 @@ DarkRP.createEntity("Seeds", {
 
 DarkRP.createEntity("Ammo Dispenser", {
 	ent = "ent_ammodispenser",
-	model = "models/props_wasteland/controlroom_filecabinet001a.mdl",
+	model = "models/props_lab/reciever_cart.mdl",
 	price = 20000,
 	max = 2,
 	cmd = "buyammodispenser",
