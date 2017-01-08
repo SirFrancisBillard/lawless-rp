@@ -69,12 +69,21 @@ DarkRP.createCategory{
 }
 
 DarkRP.createCategory{
+	name = "Homeless",
+	categorises = "jobs",
+	startExpanded = true,
+	color = Color(47, 79, 79, 255),
+	canSee = function(ply) return true end,
+	sortOrder = 100,
+}
+
+DarkRP.createCategory{
 	name = "Rebels",
 	categorises = "jobs",
 	startExpanded = true,
 	color = Color(75, 75, 75, 255),
 	canSee = function(ply) return true end,
-	sortOrder = 100,
+	sortOrder = 101,
 }
 
 DarkRP.createCategory{
@@ -83,7 +92,7 @@ DarkRP.createCategory{
 	startExpanded = true,
 	color = Color(244, 66, 209, 255),
 	canSee = function(ply) return true end,
-	sortOrder = 101,
+	sortOrder = 102,
 }
 
 -- Entities
@@ -117,6 +126,15 @@ DarkRP.createCategory{
 
 DarkRP.createCategory{
 	name = "Ammunition",
+	categorises = "entities",
+	startExpanded = true,
+	color = Color(0, 107, 0, 255),
+	canSee = function(ply) return true end,
+	sortOrder = 100,
+}
+
+DarkRP.createCategory{
+	name = "Weapon Crafting",
 	categorises = "entities",
 	startExpanded = true,
 	color = Color(0, 107, 0, 255),

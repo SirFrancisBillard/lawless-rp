@@ -1,11 +1,11 @@
 AddCSLuaFile()
 
-ENT.Type = "anim"
-ENT.Base = "base_gmodentity"
-ENT.PrintName = "Ammo Dispenser"
-ENT.Author = "Sir Francis Billard"
-ENT.Category = "Lawless RP"
-ENT.Spawnable = true
+ENT.Type				= "anim"
+ENT.Base				= "base_entity"
+ENT.PrintName			= "Ammo Dispenser"
+
+ENT.Category			= "Lawless RP"
+ENT.Spawnable			= true
 
 function ENT:SetupDataTables()
 	self:NetworkVar("Int", 0, "price")
@@ -33,20 +33,18 @@ if SERVER then
 			phys:SetMass(40)
 		end
 
-		self:SetCharges(0)6
+		self:SetCharges(0)
 		self:Generate()
 	end
 
 	function ENT:Use(activator, caller)
 		if IsValid(caller) and caller:IsPlayer() and self:GetCharges() > 0 then
 			for k,v in pairs(activator:GetWeapons()) do
-				if v:GetClass() ~= "weapon_ex_ammo" then
-					if v:GetPrimaryAmmoType() then
-						if v:GetMaxClip1() and v:GetMaxClip1() >= 1 then
-							activator:GiveAmmo(v:GetMaxClip1(), v:GetPrimaryAmmoType(), false)
-						else
-							activator:GiveAmmo(1, v:GetPrimaryAmmoType(), false)
-						end
+				if v:GetClass() ~= "weapon_ex_ammo" and v:GetPrimaryAmmoType() then
+					if v:GetMaxClip1() and v:GetMaxClip1() >= 1 then
+						activator:GiveAmmo(v:GetMaxClip1(), v:GetPrimaryAmmoType(), false)
+					else
+						activator:GiveAmmo(1, v:GetPrimaryAmmoType(), false)
 					end
 				end
 			end

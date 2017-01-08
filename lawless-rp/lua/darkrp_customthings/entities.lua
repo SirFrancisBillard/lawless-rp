@@ -17,6 +17,8 @@ http://wiki.darkrp.com/index.php/DarkRP:CustomEntityFields
 Add entities under the following line:
 ---------------------------------------------------------------------------]]
 
+-- Contraband
+
 DarkRP.createEntity("Money Printer", {
 	ent = "contra_moneyprinter",
 	model = "models/props_c17/consolebox01a.mdl",
@@ -125,4 +127,24 @@ DarkRP.createEntity("Kevlar", {
 	cmd = "buykevlar",
 	category = "Black Market",
 	allowed = {TEAM_BLACKMARKET}
+})
+
+-- Weapon Crafting
+
+DarkRP.createEntity("Crafting Bench", {
+	ent = "ent_bur_weaponbench",
+	model = "models/props_combine/breendesk.mdl",
+	price = 24000,
+	max = 2,
+	cmd = "buycraftingbench",
+	category = "Weapon Crafting"
+})
+
+DarkRP.createEntity("Scrap Metal", {
+	ent = "ent_bur_scrap",
+	model = "models/props_vehicles/carparts_muffler01a.mdl",
+	price = 1200,
+	max = 10,
+	cmd = "buyscrap",
+	category = "Weapon Crafting"
 })

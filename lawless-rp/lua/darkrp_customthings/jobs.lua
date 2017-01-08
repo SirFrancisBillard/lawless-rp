@@ -140,12 +140,12 @@ TEAM_CHIEF = DarkRP.createJob("Police Chief", {
 	color = Color(25, 25, 170, 255),
 	model = "models/player/combine_soldier_prisonguard.mdl",
 	description = [[The Chief is the leader of the Civil Protection unit.
-        Coordinate the police force to enforce law in the city.
-        Hit a player with arrest baton to put them in jail.
-        Bash a player with a stunstick and they may learn to obey the law.
-        The Battering Ram can break down the door of a criminal, with a warrant for his/her arrest.
-        Type /wanted <name> to alert the public to the presence of a criminal.
-        Type /jailpos to set the Jail Position.]],
+		Coordinate the police force to enforce law in the city.
+		Hit a player with arrest baton to put them in jail.
+		Bash a player with a stunstick and they may learn to obey the law.
+		The Battering Ram can break down the door of a criminal, with a warrant for his/her arrest.
+		Type /wanted <name> to alert the public to the presence of a criminal.
+		Type /jailpos to set the Jail Position.]],
 	weapons = {"arrest_stick", "unarrest_stick", "weapon_cs_m4", "weapon_cs_deagle", "stunstick", "door_ram", "weaponchecker"},
 	command = "chief",
 	max = 1,
@@ -375,6 +375,44 @@ TEAM_REBELLEADER = DarkRP.createJob("Rebel Leader", {
 		["css_50ae"] = 56,
 	},
 	category = "Rebels",
+})
+
+TEAM_HOBO = DarkRP.createJob("Hobo", {
+	color = Color(80, 45, 0, 255),
+	model = "models/player/corpse1.mdl",
+	description = [[The lowest member of society. Everybody laughs at you.
+		You have no home.
+		Beg for your food and money
+		Sing for everyone who passes to get money
+		Make your own wooden home somewhere in a corner or outside someone else's door]],
+	weapons = {"weapon_bugbait"},
+	command = "hobo",
+	max = 4,
+	salary = 0,
+	admin = 0,
+	vote = false,
+	hasLicense = false,
+	candemote = false,
+	hobo = true,
+	category = "Homeless",
+})
+
+TEAM_SUPERHOBO = DarkRP.createJob("Super Hobo", {
+	color = Color(80, 45, 0, 255),
+	model = "models/player/charple.mdl",
+	description = [[The highest member of the lowest member of society.
+		You lead the hobos with your makeshift pistol.
+		You carry a bent paperclip to pick locks.]],
+	weapons = {"weapon_bugbait", "weapon_cs_glock", "lockpick"},
+	command = "superhobo",
+	max = 1,
+	salary = 1,
+	admin = 0,
+	vote = false,
+	hasLicense = false,
+	candemote = false,
+	hobo = true,
+	category = "Homeless",
 })
 
 --[[---------------------------------------------------------------------------
