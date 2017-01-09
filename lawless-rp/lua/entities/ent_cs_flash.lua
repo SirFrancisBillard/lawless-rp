@@ -90,14 +90,14 @@ function ENT:Detonate(self,pos)
 				if SERVER then
 					local distancecount = (maxdistance - self:EyePos():Distance(v:GetPos())) / 100
 					if distancecount > 0 then
-						self:BlindEffects(v,distancecount)
+						self:BlindEffects(v, distancecount)
 					end
 				end
 			else
 				if CLIENT then
 					local distancecount = (maxdistance - self:EyePos():Distance(v:GetPos())) / 100
 					if distancecount > 0 then
-						self:BlindEffects(v,distancecount)
+						self:BlindEffects(v, distancecount)
 					end
 				end
 			end

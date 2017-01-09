@@ -72,7 +72,7 @@ DarkRP.createCategory{
 	name = "Homeless",
 	categorises = "jobs",
 	startExpanded = true,
-	color = Color(47, 79, 79, 255),
+	color = Color(80, 45, 0, 255),
 	canSee = function(ply) return true end,
 	sortOrder = 100,
 }

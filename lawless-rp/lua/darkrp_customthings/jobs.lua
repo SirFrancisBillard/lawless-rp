@@ -123,15 +123,22 @@ TEAM_POLICE = DarkRP.createJob("Police Officer", {
 		The Battering Ram can break down the door of a criminal, with a warrant for their arrest.
 		The Battering Ram can also unfreeze frozen props (if enabled).
 		Type /wanted <name> to alert the public to the presence of a criminal.]],
-	weapons = {"arrest_stick", "unarrest_stick", "weapon_cs_mp5", "weapon_cs_glock", "stunstick", "door_ram", "weaponchecker"},
+	weapons = {"arrest_stick", "unarrest_stick", "weapon_cs_mp5", "weapon_cs_glock", "weapon_cs_flash", "weapon_pepperspray", "stunstick", "door_ram", "weaponchecker"},
 	command = "police",
 	max = 12,
 	salary = GAMEMODE.Config.normalsalary * 2,
 	admin = 0,
 	vote = true,
 	hasLicense = true,
+	PlayerSpawn = function(ply)
+		ply:SetMaxHealth(250)
+		ply:SetHealth(250)
+		ply:SetArmor(250)
+	end,
 	ammo = {
 		["css_9mm"] = 360,
+		["css_flashgrenade"] = 4,
+		["pepperspray_ammo"] = 9999
 	},
 	category = "Government",
 })
@@ -146,16 +153,53 @@ TEAM_CHIEF = DarkRP.createJob("Police Chief", {
 		The Battering Ram can break down the door of a criminal, with a warrant for his/her arrest.
 		Type /wanted <name> to alert the public to the presence of a criminal.
 		Type /jailpos to set the Jail Position.]],
-	weapons = {"arrest_stick", "unarrest_stick", "weapon_cs_m4", "weapon_cs_deagle", "stunstick", "door_ram", "weaponchecker"},
+	weapons = {"arrest_stick", "unarrest_stick", "weapon_cs_m4", "weapon_cs_deagle", "weapon_cs_flash", "weapon_pepperspray", "stunstick", "door_ram", "weaponchecker"},
 	command = "chief",
 	max = 1,
 	salary = GAMEMODE.Config.normalsalary * 3,
 	admin = 0,
 	vote = true,
 	hasLicense = true,
+	chief = true,
+	PlayerSpawn = function(ply)
+		ply:SetMaxHealth(500)
+		ply:SetHealth(500)
+		ply:SetArmor(250)
+	end,
 	ammo = {
 		["css_556mm"] = 240,
 		["css_50ae"] = 56,
+		["css_flashgrenade"] = 10,
+		["pepperspray_ammo"] = 9999
+	},
+	category = "Government",
+})
+
+TEAM_SWAT = DarkRP.createJob("SWAT", {
+	color = Color(25, 25, 170, 255),
+	model = "models/player/combine_soldier_prisonguard.mdl",
+	description = [[The SWAT are an elite special forces unit, called in to neutralize extremely dangerous threats.]],
+	weapons = {"arrest_stick", "unarrest_stick", "weapon_cs_m249", "weapon_cs_m4", "weapon_cs_awp", "weapon_cs_deagle", "weapon_cs_usp", "weapon_cs_flash", "weapon_cs_smoke", "weapon_pepperspray", "stunstick", "door_ram", "weaponchecker"},
+	command = "chief",
+	max = 4,
+	salary = GAMEMODE.Config.normalsalary * 4,
+	admin = 1,
+	vote = false,
+	hasLicense = true,
+	chief = true,
+	PlayerSpawn = function(ply)
+		ply:SetMaxHealth(1000)
+		ply:SetHealth(1000)
+		ply:SetArmor(250)
+	end,
+	ammo = {
+		["css_556mm"] = 2400,
+		["css_50ae"] = 560,
+		["css_338"] = 600,
+		["css_45acp"] = 600,
+		["css_flashgrenade"] = 50,
+		["css_smokegrenade"] = 50,
+		["pepperspray_ammo"] = 9999
 	},
 	category = "Government",
 })
