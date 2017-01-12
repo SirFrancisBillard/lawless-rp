@@ -3,36 +3,39 @@ if SERVER then
 	AddCSLuaFile()
 end
 
-SWEP.PrintName			= "Molotov Cocktail"
-SWEP.Author			= "Vladimir Putin"
-SWEP.Instructions		= "Light the rag and hurl the fucker."
-SWEP.Purpose			= "The Molotov Cocktail is a cheap and effective way to cause mayhem."
-SWEP.Contact			= "www.csgo-maxbet-ezskins.ru"
-SWEP.Base 			= "weapon_sck_base"
+SWEP.PrintName = "Molotov Cocktail"
+SWEP.Category = "Putin's Private Reserve"
+SWEP.Author = "Vladimir Putin"
+SWEP.Instructions = "Light the rag and hurl the fucker."
+SWEP.Purpose = "The Molotov Cocktail is a cheap and effective way to cause mayhem."
+SWEP.Contact = "www.csgo-maxbet-ezskins.ru"
 
-SWEP.ViewModel 			= "models/weapons/c_grenade.mdl"
-SWEP.WorldModel 		= "models/weapons/w_grenade.mdl"
-SWEP.ViewModelFOV		= 60
-SWEP.UseHands 			= true
+SWEP.Base = "weapon_sck_base"
 
-SWEP.Category			= "Putin's Private Reserve"
-SWEP.Spawnable			= true
+SWEP.Spawnable = true
+SWEP.AdminOnly = false
 
-SWEP.Slot 			= 4
-SWEP.HoldType 			= "grenade"
+SWEP.ViewModel = "models/weapons/c_grenade.mdl"
+SWEP.WorldModel = "models/weapons/w_grenade.mdl"
+SWEP.ViewModelFOV = 60
+SWEP.HoldType = "grenade"
+SWEP.UseHands = true
 
-SWEP.Primary.ClipSize		= -1
-SWEP.Primary.DefaultClip	= -1
-SWEP.Primary.Automatic		= true
-SWEP.Primary.Ammo		= "none"
+SWEP.Slot = 4
+SWEP.SlotPos = 4
 
-SWEP.Secondary.ClipSize		= -1
-SWEP.Secondary.DefaultClip	= -1
-SWEP.Secondary.Automatic	= false
-SWEP.Secondary.Ammo		= "none"
+SWEP.Primary.ClipSize = -1
+SWEP.Primary.DefaultClip = -1
+SWEP.Primary.Automatic = true
+SWEP.Primary.Ammo = "none"
 
-SWEP.ShowWorldModel 		= false
-SWEP.ShowViewModel 		= false
+SWEP.Secondary.ClipSize = -1
+SWEP.Secondary.DefaultClip = -1
+SWEP.Secondary.Automatic = false
+SWEP.Secondary.Ammo = "none"
+
+SWEP.ShowWorldModel = false
+SWEP.ShowViewModel = false
 
 SWEP.WElements = {
 	["element_name"] = { type = "Model", model = "models/props_junk/garbage_glassbottle003a.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(3.575, 2.059, -1.792), angle = Angle(12.855, -12.283, 180), size = Vector(0.927, 0.927, 0.927), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
@@ -59,10 +62,10 @@ function SWEP:PrimaryAttack()
 			end )
 		end )
 		if SERVER then
-			local Molotov = ents.Create( "ent_molotov" )
-			Molotov:SetPos( self.Owner:GetShootPos() +self.Owner:GetAimVector() * 20 )
-			Molotov:Spawn()
-			Molotov:GetPhysicsObject():ApplyForceCenter( self.Owner:GetAimVector() * 1500 )
+			local molly = ents.Create( "ent_molotov" )
+			molly:SetPos( self.Owner:GetShootPos() + self.Owner:GetAimVector() * 20 )
+			molly:Spawn()
+			molly:GetPhysicsObject():ApplyForceCenter( self.Owner:GetAimVector() * 1500 )
 		end
 	end
 end
