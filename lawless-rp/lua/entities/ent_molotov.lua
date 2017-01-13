@@ -6,11 +6,8 @@ end
 ENT.Type = "anim"
 ENT.Base = "base_anim"
 
-ENT.PrintName		= "Thrown Molotov"
-ENT.Author			= "Vladimir Putin"
-ENT.Contact			= ""
-ENT.Purpose			= ""
-ENT.Instructions	= ""
+ENT.PrintName = "Thrown Molotov"
+ENT.Author = "Vladimir Putin"
 
 if CLIENT then return end
 
@@ -28,7 +25,7 @@ function ENT:Initialize()
 end
 
 function ENT:Explode( pos )
-	sound.Play( "physics/glass/glass_cup_break".. math.random(1, 2).. ".wav", self:GetPos(), 150, 150 )
+	sound.Play( "physics/glass/glass_cup_break" .. math.random(1, 2) .. ".wav", self:GetPos(), 150, 150 )
 	local Fire = ents.Create( "ent_fire" )
 	Fire:SetPos( pos )
 	Fire:Spawn()
@@ -36,7 +33,7 @@ function ENT:Explode( pos )
 end
 
 function ENT:Think()
-	if self.Created +10 < CurTime() then
+	if self.Created + 10 < CurTime() then
 		self:Explode( self:GetPos() )
 		return false
 	end
@@ -44,11 +41,11 @@ end
 
 function ENT:PhysicsCollide( tblData, pPhysHit )
 	local theirImpactSpeed = tblData.TheirOldVelocity:LengthSqr()
-	local impactSpeed = tblData.OurOldVelocity:LengthSqr() +theirImpactSpeed
+	local impactSpeed = tblData.OurOldVelocity:LengthSqr() + theirImpactSpeed
 	if impactSpeed < 5000 then return end
 	
-	local newImpactSpeed = self:GetVelocity():LengthSqr() +tblData.HitEntity:GetVelocity():LengthSqr()
-	local impactSpeedDelta = impactSpeed -newImpactSpeed
+	local newImpactSpeed = self:GetVelocity():LengthSqr() + tblData.HitEntity:GetVelocity():LengthSqr()
+	local impactSpeedDelta = impactSpeed - newImpactSpeed
 	if impactSpeedDelta < 5000 then return end
 	self:Explode( self:GetPos() )
 end
